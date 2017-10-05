@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        {{#each posts}}
+        <div class="col">
+            <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                <div class="single-article-image-containter">
+                    <img class="single-article-image" src="" />
+                </div>
+
+                <div class="row">
+                    {{{title}}}
+                </div>
+
+                <div class="row">
+                    {{author}}
+                </div>
+
+                <div class="row">
+                    {{{content}}}
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+    {{#if pagination}}
+    <div class="row pagination-container no-gutters">
+        <div class="d-flex justify-content-start" id="previous">
+            <a href="#/home/?pageNumber=1&pageSize={{pageSize}}">«</a>
+        </div>
+
+        <div class="col d-flex justify-content-center pages">
+            {{#each pageNumbers}}
+            <a href="#/home/?pageNumber={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
+        </div>
+
+        <div class="d-flex justify-content-end" id="next">
+            <a href="#/home/?pageNumber={{count}}&pageSize={{pageSize}}">»</a>
+        </div>
+    </div>
+    {{/if}}
+</div>

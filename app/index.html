@@ -1,0 +1,120 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>The Style</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link nav-link-active" href="#/home">HOME</a>
+        </li>
+        <li class="nav-item isLogged">
+          <a class="nav-link " href="#/register">REGISTER</a>
+        </li>
+        <li class="nav-item isLogged">
+          <a class="nav-link" href="#/login">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav" href="#/posts/?category=fashion">USERS NEWS</a>
+        </li>
+        <li class="nav-item userIsLogged hidden">
+          <a class="nav-link" href="#/create-post">CREATE POST</a>
+        </li>
+        <li class="nav-item userIsLogged hidden">
+          <a class="nav-link " href="#/profile">MY PROFILE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hidden" href="#/sign-out" id="logout">LOGOUT</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+  </header>
+
+
+  <main id="app-container"></main>
+  <footer>
+    <div class="container-fluid">
+      <div class="row sections-container">
+        <div class="col-xs-3">
+          <section class="footer-section">
+            <p class="section-title i-bg-yellow">Recent posts</p>
+            <div class="section-content">
+              <ul>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col-xs-3">
+          <section class="footer-section">
+            <p class="section-title i-bg-yellow">Custom text widget</p>
+            <div class="section-content">
+              <p>Pellentesque id nisi enim. Vivamus non urna tortor. Cras sit amet condimentum sapien, in ornare sem. Nam venenatis
+                diam vel ullamcorper faucibus. Mauris sed eros neque.</p>
+            </div>
+          </section>
+        </div>
+        <div class="col-xs-3">
+          <section class="footer-section">
+            <p class="section-title i-bg-yellow">Recent comments</p>
+            <div class="section-content">
+              <ul>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col-xs-3">
+          <section class="footer-section">
+            <p class="section-title i-bg-yellow">Archives</p>
+            <div class="section-content">
+              <ul>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+                <li><img src="./images/pagination-right.png" alt=""><span>Text asd asd asd asdasd as</span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js"></script>
+  <script src="./configs/system-config.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+  <script>
+    System.import('main');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="single-article-image-containter">
+                <img class="single-article-image" src="{{image}}" />
+            </div>
+
+            <div class="row">
+                {{{title}}}
+            </div>
+
+            <div class="row">
+                {{author}}
+            </div>
+
+            <div class="row">
+                {{{content}}}
+            </div>
+
+            <form action="#/posts/{{authorUid}}{{dateOfCreation}}/create-comment" id="post-form" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" name="name" id="name" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">ImageUrl</label>
+                <input class="form-control" type="text" name="imageUrl" id="imageUrl" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" id="content" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CREATE" class="btn btn-success btn-submit-form">
+            </div>
+            </form>
+        </div>
+    </div>

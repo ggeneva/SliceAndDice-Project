@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <form action="#/create-post" id="post-form" method="post">
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input class="form-control" id="image" type="file" accept="image/*" name="image" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" id="content" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input class="form-control" type="text" name="category" id="category" placeholder="Category" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CREATE" class="btn btn-success btn-submit-form">
+            </div>
+        </form>
+    </div>
+</div>
