@@ -1,2 +1,252 @@
+@font-face {
+  font-family: LeagueGothic;
+  src: url('../fonts/LeagueGothic-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: DroidSans;
+  src: url('../fonts/DroidSans-Regular.ttf') format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin:0;
+    padding:0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: -webkit-gradient(linear, 0 0, 799 0, from(#1c1c1c), color-stop(0.002, #1b1b1c), color-stop(0.003, #1c1a1c), color-stop(0.005, #1c1a1c), color-stop(0.005, #1d1d1b), color-stop(0.006, #1d1d1d), color-stop(0.008, #1c1d1d), color-stop(0.011, #1d1d1d), color-stop(0.013, #1d1d1d), color-stop(0.015, #1c1e1d), color-stop(0.017, #1e1e1e), color-stop(0.021, #1e1e1d), color-stop(0.023, #1e1d1e), color-stop(0.025, #1e1e1d), color-stop(0.026, #1f1e1e), color-stop(0.027, #1e1e1e), color-stop(0.03, #1d1d1e), color-stop(0.03, #1f1f1f), color-stop(0.033, #1f1f1f), color-stop(0.033, #1f1d1f), color-stop(0.035, #1e201e), color-stop(0.036, #1e1f1f), color-stop(0.04, #201f1e), color-stop(0.042, #1f1f20), color-stop(0.043, #201f20), color-stop(0.046, #1f1f20), color-stop(0.048, #211f21), color-stop(0.051, #202021), color-stop(0.055, #20201f), color-stop(0.055, #222122), color-stop(0.056, #222120), color-stop(0.057, #212220), color-stop(0.058, #212121), color-stop(0.063, #212222), color-stop(0.065, #222121), color-stop(0.072, #232323), color-stop(0.075, #232423), color-stop(0.076, #242424), color-stop(0.077, #232424), color-stop(0.08, #232323), color-stop(0.081, #232424), color-stop(0.082, #232425), color-stop(0.083, #252425), color-stop(0.085, #222425), color-stop(0.087, #252424), color-stop(0.088, #252424), color-stop(0.091, #242524), color-stop(0.092, #252424), color-stop(0.095, #252626), color-stop(0.097, #252625), color-stop(0.098, #252526), color-stop(0.1, #252626), color-stop(0.102, #272627), color-stop(0.105, #262627), color-stop(0.107, #272726), color-stop(0.108, #272727), color-stop(0.11, #272526), color-stop(0.111, #262627), color-stop(0.113, #282828), color-stop(0.115, #272828), color-stop(0.117, #272727), color-stop(0.122, #292929), color-stop(0.125, #292928), color-stop(0.126, #292829), color-stop(0.127, #282929), color-stop(0.128, #292a29), color-stop(0.13, #2a2a29), color-stop(0.131, #292a2a), color-stop(0.132, #292929), color-stop(0.135, #292a2a), color-stop(0.136, #2a2929), color-stop(0.138, #292b2b), color-stop(0.14, #2a2a2b), color-stop(0.141, #292a2a), color-stop(0.142, #2a2a2a), color-stop(0.146, #2b2c2c), color-stop(0.147, #2c2c2c), color-stop(0.148, #2c2c2c), color-stop(0.15, #2b2c2b), color-stop(0.151, #2c2c2c), color-stop(0.152, #2d2a2c), color-stop(0.153, #2c2b2c), color-stop(0.155, #2d2c2d), color-stop(0.156, #2d2d2c), color-stop(0.157, #2d2d2c), color-stop(0.161, #2d2c2d), color-stop(0.162, #2c2d2d), color-stop(0.165, #2b2d2e), color-stop(0.165, #2e2d2c), color-stop(0.17, #2d2e2d), color-stop(0.171, #2e2d2e), color-stop(0.172, #2e2d2e), color-stop(0.175, #2d2f2d), color-stop(0.177, #2f2e2f), color-stop(0.18, #2e2f2e), color-stop(0.182, #2e2e2f), color-stop(0.187, #2f302f), color-stop(0.188, #303030), color-stop(0.195, #313030), color-stop(0.196, #2f3030), color-stop(0.197, #2f3030), color-stop(0.198, #302f30), color-stop(0.2, #313130), color-stop(0.201, #31302f), color-stop(0.202, #302f30), color-stop(0.204, #303031), color-stop(0.205, #313031), color-stop(0.21, #303030), color-stop(0.211, #2f3031), color-stop(0.214, #313232), color-stop(0.215, #313131), color-stop(0.216, #303232), color-stop(0.219, #323132), color-stop(0.22, #323231), color-stop(0.794, #323231), color-stop(0.795, #323132), color-stop(0.798, #303131), color-stop(0.799, #313131), color-stop(0.801, #303132), color-stop(0.802, #313031), color-stop(0.804, #31302f), color-stop(0.806, #303130), color-stop(0.811, #303031), color-stop(0.812, #302f30), color-stop(0.813, #313030), color-stop(0.814, #31312f), color-stop(0.816, #303030), color-stop(0.817, #2f302f), color-stop(0.819, #2f2f2f), color-stop(0.819, #303130), color-stop(0.821, #302e30), color-stop(0.822, #303030), color-stop(0.824, #30302e), color-stop(0.827, #2e302e), color-stop(0.829, #2f2e2f), color-stop(0.833, #2e2f2e), color-stop(0.836, #2f2e2f), color-stop(0.839, #2d2f2c), color-stop(0.841, #2d2f2c), color-stop(0.841, #2e2e2f), color-stop(0.842, #2d2d2e), color-stop(0.843, #2d2e2d), color-stop(0.847, #2e2d2d), color-stop(0.849, #2d2e2c), color-stop(0.851, #2c2d2e), color-stop(0.852, #2d2c2d), color-stop(0.853, #2d2c2c), color-stop(0.854, #2c2c2d), color-stop(0.857, #2d2d2d), color-stop(0.859, #2d2b2d), color-stop(0.861, #2c2b2b), color-stop(0.862, #2d2b2b), color-stop(0.863, #2b2c2b), color-stop(0.864, #2b2c2c), color-stop(0.866, #2c2b2c), color-stop(0.867, #2b2c2c), color-stop(0.868, #2a2c2b), color-stop(0.869, #2b2c2b), color-stop(0.872, #2b2a2b), color-stop(0.873, #2b2b2b), color-stop(0.874, #2b2b2b), color-stop(0.876, #2a2b2b), color-stop(0.877, #2a2a2a), color-stop(0.878, #292929), color-stop(0.879, #282a2b), color-stop(0.881, #282a2b), color-stop(0.881, #2a2a28), color-stop(0.882, #292929), color-stop(0.883, #292a2a), color-stop(0.884, #2a2a2a), color-stop(0.886, #292a29), color-stop(0.887, #282929), color-stop(0.888, #292829), color-stop(0.889, #282928), color-stop(0.894, #292929), color-stop(0.896, #292929), color-stop(0.896, #282727), color-stop(0.897, #282827), color-stop(0.898, #282727), color-stop(0.899, #272727), color-stop(0.902, #272727), color-stop(0.903, #272626), color-stop(0.904, #262727), color-stop(0.906, #262627), color-stop(0.907, #262726), color-stop(0.909, #262727), color-stop(0.911, #272527), color-stop(0.913, #262627), color-stop(0.914, #252726), color-stop(0.916, #262526), color-stop(0.918, #262625), color-stop(0.926, #242426), color-stop(0.926, #252423), color-stop(0.927, #252425), color-stop(0.929, #232425), color-stop(0.931, #242425), color-stop(0.932, #232425), color-stop(0.934, #242323), color-stop(0.937, #232324), color-stop(0.939, #232322), color-stop(0.941, #222323), color-stop(0.942, #232222), color-stop(0.944, #232322), color-stop(0.948, #232322), color-stop(0.948, #222121), color-stop(0.949, #232120), color-stop(0.951, #232120), color-stop(0.951, #202122), color-stop(0.952, #222221), color-stop(0.953, #222121), color-stop(0.956, #212121), color-stop(0.957, #222120), color-stop(0.959, #222021), color-stop(0.961, #1f2121), color-stop(0.962, #202121), color-stop(0.964, #202121), color-stop(0.967, #201f21), color-stop(0.972, #1f2020), color-stop(0.973, #201f1f), color-stop(0.978, #1e1e1f), color-stop(0.979, #1f1f1e), color-stop(0.981, #1d1f1f), color-stop(0.982, #1f1f1f), color-stop(0.986, #1f1f1f), color-stop(0.986, #1d1c1e), color-stop(0.987, #1f1d1f), color-stop(0.988, #1e1e1d), color-stop(0.989, #1e1e1d), color-stop(0.991, #1d1e1e), color-stop(0.992, #1e1e1d), color-stop(0.997, #1e1e1e), to(#1d1e1e));
+    background-image: -webkit-linear-gradient(360deg, #1c1c1c, #1b1b1c 0.2%, #1c1a1c 0.3%, #1c1a1c 0.5%, #1d1d1b 0.5%, #1d1d1d 0.6%, #1c1d1d 0.8%, #1d1d1d 1.1%, #1d1d1d, #1c1e1d, #1e1e1e 1.7%, #1e1e1d 2.1%, #1e1d1e, #1e1e1d 2.5%, #1f1e1e 2.6%, #1e1e1e 2.7%, #1d1d1e 3%, #1f1f1f 3%, #1f1f1f 3.3%, #1f1d1f 3.3%, #1e201e 3.5%, #1e1f1f 3.6%, #201f1e 4%, #1f1f20 4.2%, #201f20 4.3%, #1f1f20 4.6%, #211f21 4.8%, #202021 5.1%, #20201f 5.5%, #222122 5.5%, #222120, #212220, #212121 5.8%, #212222 6.3%, #222121 6.5%, #232323 7.2%, #232423 7.5%, #242424, #232424 7.7%, #232323 8%, #232424, #232425, #252425 8.3%, #222425 8.5%, #252424 8.7%, #252424 8.8%, #242524 9.1%, #252424 9.2%, #252626 9.5%, #252625 9.7%, #252526 9.8%, #252626, #272627 10.2%, #262627 10.5%, #272726 10.7%, #272727 10.8%, #272526 11%, #262627 11.1%, #282828, #272828, #272727 11.7%, #292929 12.2%, #292928 12.5%, #292829, #282929, #292a29 12.8%, #2a2a29 13%, #292a2a, #292929 13.2%, #292a2a 13.5%, #2a2929 13.6%, #292b2b, #2a2a2b 14%, #292a2a 14.1%, #2a2a2a 14.2%, #2b2c2c 14.6%, #2c2c2c, #2c2c2c 14.8%, #2b2c2b 15%, #2c2c2c, #2d2a2c, #2c2b2c 15.3%, #2d2c2d 15.5%, #2d2d2c, #2d2d2c 15.7%, #2d2c2d 16.1%, #2c2d2d 16.2%, #2b2d2e 16.5%, #2e2d2c 16.5%, #2d2e2d 17%, #2e2d2e 17.1%, #2e2d2e 17.2%, #2d2f2d 17.5%, #2f2e2f 17.7%, #2e2f2e 18%, #2e2e2f 18.2%, #2f302f 18.7%, #303030 18.8%, #313030 19.5%, #2f3030, #2f3030, #302f30 19.8%, #313130 20%, #31302f, #302f30 20.2%, #303031 20.4%, #313031 20.5%, #303030 21%, #2f3031 21.1%, #313232 21.4%, #313131, #303232 21.6%, #323132 21.9%, #323231 22%, #323231 79.4%, #323132 79.5%, #303131 79.8%, #313131 79.9%, #303132 80.1%, #313031 80.2%, #31302f, #303130 80.6%, #303031 81.1%, #302f30, #313030, #31312f 81.4%, #303030 81.6%, #2f302f 81.7%, #2f2f2f 81.9%, #303130 81.9%, #302e30 82.1%, #303030 82.2%, #30302e 82.4%, #2e302e 82.7%, #2f2e2f 82.9%, #2e2f2e 83.3%, #2f2e2f, #2d2f2c 83.9%, #2d2f2c 84.1%, #2e2e2f 84.1%, #2d2d2e, #2d2e2d 84.3%, #2e2d2d 84.7%, #2d2e2c, #2c2d2e 85.1%, #2d2c2d, #2d2c2c, #2c2c2d 85.4%, #2d2d2d 85.7%, #2d2b2d, #2c2b2b 86.1%, #2d2b2b, #2b2c2b, #2b2c2c 86.4%, #2c2b2c 86.6%, #2b2c2c, #2a2c2b, #2b2c2b 86.9%, #2b2a2b 87.2%, #2b2b2b, #2b2b2b 87.4%, #2a2b2b 87.6%, #2a2a2a, #292929, #282a2b 87.9%, #282a2b 88.1%, #2a2a28 88.1%, #292929, #292a2a, #2a2a2a 88.4%, #292a29 88.6%, #282929, #292829, #282928 88.9%, #292929 89.4%, #292929 89.6%, #282727 89.6%, #282827, #282727, #272727 89.9%, #272727 90.2%, #272626, #262727 90.4%, #262627 90.6%, #262726 90.7%, #262727, #272527, #262627 91.3%, #252726 91.4%, #262526, #262625 91.8%, #242426 92.6%, #252423 92.6%, #252425 92.7%, #232425, #242425 93.1%, #232425 93.2%, #242323 93.4%, #232324 93.7%, #232322 93.9%, #222323 94.1%, #232222 94.2%, #232322 94.4%, #232322 94.8%, #222121 94.8%, #232120 94.9%, #232120 95.1%, #202122 95.1%, #222221, #222121 95.3%, #212121 95.6%, #222120 95.7%, #222021, #1f2121 96.1%, #202121 96.2%, #202121 96.4%, #201f21 96.7%, #1f2020 97.2%, #201f1f 97.3%, #1e1e1f 97.8%, #1f1f1e 97.9%, #1d1f1f 98.1%, #1f1f1f 98.2%, #1f1f1f 98.6%, #1d1c1e 98.6%, #1f1d1f, #1e1e1d, #1e1e1d 98.9%, #1d1e1e 99.1%, #1e1e1d 99.2%, #1e1e1e 99.7%, #1d1e1e);
+    background-image: -moz-linear-gradient(360deg, #1c1c1c, #1b1b1c 0.2%, #1c1a1c 0.3%, #1c1a1c 0.5%, #1d1d1b 0.5%, #1d1d1d 0.6%, #1c1d1d 0.8%, #1d1d1d 1.1%, #1d1d1d, #1c1e1d, #1e1e1e 1.7%, #1e1e1d 2.1%, #1e1d1e, #1e1e1d 2.5%, #1f1e1e 2.6%, #1e1e1e 2.7%, #1d1d1e 3%, #1f1f1f 3%, #1f1f1f 3.3%, #1f1d1f 3.3%, #1e201e 3.5%, #1e1f1f 3.6%, #201f1e 4%, #1f1f20 4.2%, #201f20 4.3%, #1f1f20 4.6%, #211f21 4.8%, #202021 5.1%, #20201f 5.5%, #222122 5.5%, #222120, #212220, #212121 5.8%, #212222 6.3%, #222121 6.5%, #232323 7.2%, #232423 7.5%, #242424, #232424 7.7%, #232323 8%, #232424, #232425, #252425 8.3%, #222425 8.5%, #252424 8.7%, #252424 8.8%, #242524 9.1%, #252424 9.2%, #252626 9.5%, #252625 9.7%, #252526 9.8%, #252626, #272627 10.2%, #262627 10.5%, #272726 10.7%, #272727 10.8%, #272526 11%, #262627 11.1%, #282828, #272828, #272727 11.7%, #292929 12.2%, #292928 12.5%, #292829, #282929, #292a29 12.8%, #2a2a29 13%, #292a2a, #292929 13.2%, #292a2a 13.5%, #2a2929 13.6%, #292b2b, #2a2a2b 14%, #292a2a 14.1%, #2a2a2a 14.2%, #2b2c2c 14.6%, #2c2c2c, #2c2c2c 14.8%, #2b2c2b 15%, #2c2c2c, #2d2a2c, #2c2b2c 15.3%, #2d2c2d 15.5%, #2d2d2c, #2d2d2c 15.7%, #2d2c2d 16.1%, #2c2d2d 16.2%, #2b2d2e 16.5%, #2e2d2c 16.5%, #2d2e2d 17%, #2e2d2e 17.1%, #2e2d2e 17.2%, #2d2f2d 17.5%, #2f2e2f 17.7%, #2e2f2e 18%, #2e2e2f 18.2%, #2f302f 18.7%, #303030 18.8%, #313030 19.5%, #2f3030, #2f3030, #302f30 19.8%, #313130 20%, #31302f, #302f30 20.2%, #303031 20.4%, #313031 20.5%, #303030 21%, #2f3031 21.1%, #313232 21.4%, #313131, #303232 21.6%, #323132 21.9%, #323231 22%, #323231 79.4%, #323132 79.5%, #303131 79.8%, #313131 79.9%, #303132 80.1%, #313031 80.2%, #31302f, #303130 80.6%, #303031 81.1%, #302f30, #313030, #31312f 81.4%, #303030 81.6%, #2f302f 81.7%, #2f2f2f 81.9%, #303130 81.9%, #302e30 82.1%, #303030 82.2%, #30302e 82.4%, #2e302e 82.7%, #2f2e2f 82.9%, #2e2f2e 83.3%, #2f2e2f, #2d2f2c 83.9%, #2d2f2c 84.1%, #2e2e2f 84.1%, #2d2d2e, #2d2e2d 84.3%, #2e2d2d 84.7%, #2d2e2c, #2c2d2e 85.1%, #2d2c2d, #2d2c2c, #2c2c2d 85.4%, #2d2d2d 85.7%, #2d2b2d, #2c2b2b 86.1%, #2d2b2b, #2b2c2b, #2b2c2c 86.4%, #2c2b2c 86.6%, #2b2c2c, #2a2c2b, #2b2c2b 86.9%, #2b2a2b 87.2%, #2b2b2b, #2b2b2b 87.4%, #2a2b2b 87.6%, #2a2a2a, #292929, #282a2b 87.9%, #282a2b 88.1%, #2a2a28 88.1%, #292929, #292a2a, #2a2a2a 88.4%, #292a29 88.6%, #282929, #292829, #282928 88.9%, #292929 89.4%, #292929 89.6%, #282727 89.6%, #282827, #282727, #272727 89.9%, #272727 90.2%, #272626, #262727 90.4%, #262627 90.6%, #262726 90.7%, #262727, #272527, #262627 91.3%, #252726 91.4%, #262526, #262625 91.8%, #242426 92.6%, #252423 92.6%, #252425 92.7%, #232425, #242425 93.1%, #232425 93.2%, #242323 93.4%, #232324 93.7%, #232322 93.9%, #222323 94.1%, #232222 94.2%, #232322 94.4%, #232322 94.8%, #222121 94.8%, #232120 94.9%, #232120 95.1%, #202122 95.1%, #222221, #222121 95.3%, #212121 95.6%, #222120 95.7%, #222021, #1f2121 96.1%, #202121 96.2%, #202121 96.4%, #201f21 96.7%, #1f2020 97.2%, #201f1f 97.3%, #1e1e1f 97.8%, #1f1f1e 97.9%, #1d1f1f 98.1%, #1f1f1f 98.2%, #1f1f1f 98.6%, #1d1c1e 98.6%, #1f1d1f, #1e1e1d, #1e1e1d 98.9%, #1d1e1e 99.1%, #1e1e1d 99.2%, #1e1e1e 99.7%, #1d1e1e);
+    background-image: -o-linear-gradient(360deg, #1c1c1c, #1b1b1c 0.2%, #1c1a1c 0.3%, #1c1a1c 0.5%, #1d1d1b 0.5%, #1d1d1d 0.6%, #1c1d1d 0.8%, #1d1d1d 1.1%, #1d1d1d, #1c1e1d, #1e1e1e 1.7%, #1e1e1d 2.1%, #1e1d1e, #1e1e1d 2.5%, #1f1e1e 2.6%, #1e1e1e 2.7%, #1d1d1e 3%, #1f1f1f 3%, #1f1f1f 3.3%, #1f1d1f 3.3%, #1e201e 3.5%, #1e1f1f 3.6%, #201f1e 4%, #1f1f20 4.2%, #201f20 4.3%, #1f1f20 4.6%, #211f21 4.8%, #202021 5.1%, #20201f 5.5%, #222122 5.5%, #222120, #212220, #212121 5.8%, #212222 6.3%, #222121 6.5%, #232323 7.2%, #232423 7.5%, #242424, #232424 7.7%, #232323 8%, #232424, #232425, #252425 8.3%, #222425 8.5%, #252424 8.7%, #252424 8.8%, #242524 9.1%, #252424 9.2%, #252626 9.5%, #252625 9.7%, #252526 9.8%, #252626, #272627 10.2%, #262627 10.5%, #272726 10.7%, #272727 10.8%, #272526 11%, #262627 11.1%, #282828, #272828, #272727 11.7%, #292929 12.2%, #292928 12.5%, #292829, #282929, #292a29 12.8%, #2a2a29 13%, #292a2a, #292929 13.2%, #292a2a 13.5%, #2a2929 13.6%, #292b2b, #2a2a2b 14%, #292a2a 14.1%, #2a2a2a 14.2%, #2b2c2c 14.6%, #2c2c2c, #2c2c2c 14.8%, #2b2c2b 15%, #2c2c2c, #2d2a2c, #2c2b2c 15.3%, #2d2c2d 15.5%, #2d2d2c, #2d2d2c 15.7%, #2d2c2d 16.1%, #2c2d2d 16.2%, #2b2d2e 16.5%, #2e2d2c 16.5%, #2d2e2d 17%, #2e2d2e 17.1%, #2e2d2e 17.2%, #2d2f2d 17.5%, #2f2e2f 17.7%, #2e2f2e 18%, #2e2e2f 18.2%, #2f302f 18.7%, #303030 18.8%, #313030 19.5%, #2f3030, #2f3030, #302f30 19.8%, #313130 20%, #31302f, #302f30 20.2%, #303031 20.4%, #313031 20.5%, #303030 21%, #2f3031 21.1%, #313232 21.4%, #313131, #303232 21.6%, #323132 21.9%, #323231 22%, #323231 79.4%, #323132 79.5%, #303131 79.8%, #313131 79.9%, #303132 80.1%, #313031 80.2%, #31302f, #303130 80.6%, #303031 81.1%, #302f30, #313030, #31312f 81.4%, #303030 81.6%, #2f302f 81.7%, #2f2f2f 81.9%, #303130 81.9%, #302e30 82.1%, #303030 82.2%, #30302e 82.4%, #2e302e 82.7%, #2f2e2f 82.9%, #2e2f2e 83.3%, #2f2e2f, #2d2f2c 83.9%, #2d2f2c 84.1%, #2e2e2f 84.1%, #2d2d2e, #2d2e2d 84.3%, #2e2d2d 84.7%, #2d2e2c, #2c2d2e 85.1%, #2d2c2d, #2d2c2c, #2c2c2d 85.4%, #2d2d2d 85.7%, #2d2b2d, #2c2b2b 86.1%, #2d2b2b, #2b2c2b, #2b2c2c 86.4%, #2c2b2c 86.6%, #2b2c2c, #2a2c2b, #2b2c2b 86.9%, #2b2a2b 87.2%, #2b2b2b, #2b2b2b 87.4%, #2a2b2b 87.6%, #2a2a2a, #292929, #282a2b 87.9%, #282a2b 88.1%, #2a2a28 88.1%, #292929, #292a2a, #2a2a2a 88.4%, #292a29 88.6%, #282929, #292829, #282928 88.9%, #292929 89.4%, #292929 89.6%, #282727 89.6%, #282827, #282727, #272727 89.9%, #272727 90.2%, #272626, #262727 90.4%, #262627 90.6%, #262726 90.7%, #262727, #272527, #262627 91.3%, #252726 91.4%, #262526, #262625 91.8%, #242426 92.6%, #252423 92.6%, #252425 92.7%, #232425, #242425 93.1%, #232425 93.2%, #242323 93.4%, #232324 93.7%, #232322 93.9%, #222323 94.1%, #232222 94.2%, #232322 94.4%, #232322 94.8%, #222121 94.8%, #232120 94.9%, #232120 95.1%, #202122 95.1%, #222221, #222121 95.3%, #212121 95.6%, #222120 95.7%, #222021, #1f2121 96.1%, #202121 96.2%, #202121 96.4%, #201f21 96.7%, #1f2020 97.2%, #201f1f 97.3%, #1e1e1f 97.8%, #1f1f1e 97.9%, #1d1f1f 98.1%, #1f1f1f 98.2%, #1f1f1f 98.6%, #1d1c1e 98.6%, #1f1d1f, #1e1e1d, #1e1e1d 98.9%, #1d1e1e 99.1%, #1e1e1d 99.2%, #1e1e1e 99.7%, #1d1e1e);
+    background-image: linear-gradient(90deg, #1c1c1c, #1b1b1c 0.2%, #1c1a1c 0.3%, #1c1a1c 0.5%, #1d1d1b 0.5%, #1d1d1d 0.6%, #1c1d1d 0.8%, #1d1d1d 1.1%, #1d1d1d, #1c1e1d, #1e1e1e 1.7%, #1e1e1d 2.1%, #1e1d1e, #1e1e1d 2.5%, #1f1e1e 2.6%, #1e1e1e 2.7%, #1d1d1e 3%, #1f1f1f 3%, #1f1f1f 3.3%, #1f1d1f 3.3%, #1e201e 3.5%, #1e1f1f 3.6%, #201f1e 4%, #1f1f20 4.2%, #201f20 4.3%, #1f1f20 4.6%, #211f21 4.8%, #202021 5.1%, #20201f 5.5%, #222122 5.5%, #222120, #212220, #212121 5.8%, #212222 6.3%, #222121 6.5%, #232323 7.2%, #232423 7.5%, #242424, #232424 7.7%, #232323 8%, #232424, #232425, #252425 8.3%, #222425 8.5%, #252424 8.7%, #252424 8.8%, #242524 9.1%, #252424 9.2%, #252626 9.5%, #252625 9.7%, #252526 9.8%, #252626, #272627 10.2%, #262627 10.5%, #272726 10.7%, #272727 10.8%, #272526 11%, #262627 11.1%, #282828, #272828, #272727 11.7%, #292929 12.2%, #292928 12.5%, #292829, #282929, #292a29 12.8%, #2a2a29 13%, #292a2a, #292929 13.2%, #292a2a 13.5%, #2a2929 13.6%, #292b2b, #2a2a2b 14%, #292a2a 14.1%, #2a2a2a 14.2%, #2b2c2c 14.6%, #2c2c2c, #2c2c2c 14.8%, #2b2c2b 15%, #2c2c2c, #2d2a2c, #2c2b2c 15.3%, #2d2c2d 15.5%, #2d2d2c, #2d2d2c 15.7%, #2d2c2d 16.1%, #2c2d2d 16.2%, #2b2d2e 16.5%, #2e2d2c 16.5%, #2d2e2d 17%, #2e2d2e 17.1%, #2e2d2e 17.2%, #2d2f2d 17.5%, #2f2e2f 17.7%, #2e2f2e 18%, #2e2e2f 18.2%, #2f302f 18.7%, #303030 18.8%, #313030 19.5%, #2f3030, #2f3030, #302f30 19.8%, #313130 20%, #31302f, #302f30 20.2%, #303031 20.4%, #313031 20.5%, #303030 21%, #2f3031 21.1%, #313232 21.4%, #313131, #303232 21.6%, #323132 21.9%, #323231 22%, #323231 79.4%, #323132 79.5%, #303131 79.8%, #313131 79.9%, #303132 80.1%, #313031 80.2%, #31302f, #303130 80.6%, #303031 81.1%, #302f30, #313030, #31312f 81.4%, #303030 81.6%, #2f302f 81.7%, #2f2f2f 81.9%, #303130 81.9%, #302e30 82.1%, #303030 82.2%, #30302e 82.4%, #2e302e 82.7%, #2f2e2f 82.9%, #2e2f2e 83.3%, #2f2e2f, #2d2f2c 83.9%, #2d2f2c 84.1%, #2e2e2f 84.1%, #2d2d2e, #2d2e2d 84.3%, #2e2d2d 84.7%, #2d2e2c, #2c2d2e 85.1%, #2d2c2d, #2d2c2c, #2c2c2d 85.4%, #2d2d2d 85.7%, #2d2b2d, #2c2b2b 86.1%, #2d2b2b, #2b2c2b, #2b2c2c 86.4%, #2c2b2c 86.6%, #2b2c2c, #2a2c2b, #2b2c2b 86.9%, #2b2a2b 87.2%, #2b2b2b, #2b2b2b 87.4%, #2a2b2b 87.6%, #2a2a2a, #292929, #282a2b 87.9%, #282a2b 88.1%, #2a2a28 88.1%, #292929, #292a2a, #2a2a2a 88.4%, #292a29 88.6%, #282929, #292829, #282928 88.9%, #292929 89.4%, #292929 89.6%, #282727 89.6%, #282827, #282727, #272727 89.9%, #272727 90.2%, #272626, #262727 90.4%, #262627 90.6%, #262726 90.7%, #262727, #272527, #262627 91.3%, #252726 91.4%, #262526, #262625 91.8%, #242426 92.6%, #252423 92.6%, #252425 92.7%, #232425, #242425 93.1%, #232425 93.2%, #242323 93.4%, #232324 93.7%, #232322 93.9%, #222323 94.1%, #232222 94.2%, #232322 94.4%, #232322 94.8%, #222121 94.8%, #232120 94.9%, #232120 95.1%, #202122 95.1%, #222221, #222121 95.3%, #212121 95.6%, #222120 95.7%, #222021, #1f2121 96.1%, #202121 96.2%, #202121 96.4%, #201f21 96.7%, #1f2020 97.2%, #201f1f 97.3%, #1e1e1f 97.8%, #1f1f1e 97.9%, #1d1f1f 98.1%, #1f1f1f 98.2%, #1f1f1f 98.6%, #1d1c1e 98.6%, #1f1d1f, #1e1e1d, #1e1e1d 98.9%, #1d1e1e 99.1%, #1e1e1d 99.2%, #1e1e1e 99.7%, #1d1e1e);
+    font-family: LeagueGothic;
+    overflow-x: hidden !important; 
+    font-size: 13px;
+    /*background-image: url('../images/background.png');*/
+} 
+.g-wrapper {
+    overflow-x:hidden;
+}
+a {
+    color: inherit;
+}
+a:hover,  a:active, a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+ul li a:hover, ul li a:active, ul li a:focus{
+    color: #dcc08e;
+}
+
+.g-bg-yellow {
+    color: #dcc08e;
+}
+.g-style {
+    display: flex;
+    flex-direction: column;
+}
+.g-hbox {
+    display: flex;
+    flex-direction: row;
+}
+.g-flex {
+    flex: 1 1 auto;
+}
 .hidden {
-  display: none !important; }
+    display: none !important;
+}
+.g-check-media{
+    display:none;
+    width:0;
+}
+
+.g-logo-box {
+    margin-left: 67px;
+    margin-top: 124px;
+    margin-bottom: 22px;
+}
+
+#g-logo {
+    height: 104px;
+}
+/*
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: red;
+    background-image: url(https://www.freeclipartnow.com/d/40207-1/arrow-3D-green-down.jpg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+*/
+#g-mobile-logo {
+    width: 50%;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #FFFFFF;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+    background-color: #DCC08E;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+    background-color: #DCC08E;
+}
+
+.g-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.g-reset > li {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#g-myNavbar {
+    margin-left: 84px;
+    margin-right: 82px;
+    margin-bottom: 44px;
+    text-shadow: 1px 1px black;
+}
+
+#g-myNavbar ul li {
+    margin-right: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #ffffff !important;
+}
+#g-myNavbar ul li:last-of-type {
+    margin-right: 0px !important;
+}
+
+.g-search-form {
+    font-family: 'DroidSans', sans-serif;
+    width:191px;
+    height: 33px;
+    color:#595959;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    background:transparent url('../images/search-icon.png') no-repeat scroll right;
+    background-color: #1b1a1a;
+    border-bottom: 1px solid #323233 !important;
+    border-right: 1px solid #2b2a2a !important;
+    text-shadow: 1px 1px black  !important;
+    border:none;
+}
+.g-search-form-text {
+    padding: 14px 14px 10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    width: 203px;
+    text-align: left;
+    list-style: none;
+    background-color: #222222;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    padding-bottom: 14px;
+    padding-top: 8px;
+}
+
+.dropdown-menu > li >a {
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 1;
+    color: inherit;
+    white-space:unset;
+    font-size: 22px;
+    padding-top: 11px !important;
+    padding-left: 20px !important;
+    padding-right: 0px !important;
+
+}
+.dropdown-menu > li >a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:active {
+    color: #dcc08e;
+    background: #222222;
+}
+
+.dropdown-menu > li > a:hover #g-sub-li-nav-pic, .dropdown-menu > li > a:focus #g-sub-li-nav-pic, .dropdown-menu > li > a:active #g-sub-li-nav-pic {
+    content: url("../images/sub-li-nav-red.png");
+}
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+    border-top-left-radius: 0.001em;
+    border-top-right-radius: 0.001em;
+    background: #222222;
+    box-shadow: 0px 0px 0px 10px #222222;
+}
+#g-sub-li-nav-pic {
+    display:inline-block;
+    content: url('../images/sub-li-nav.png');
+}
+.g-mobile-menu {
+    margin: 20px;
+}
+@media (max-width: 1200px) {
+    #g-myNavbar ul li {
+        font-size: 1.8vw;
+        margin-right: 10px;
+    }
+    .dropdown-menu > li > a {
+        font-size: 1.8vw ;
+    }
+    #g-myNavbar {
+        margin-left: 64px;
+        margin-right: 62px;
+        margin-bottom: 34px;
+        text-shadow: 1px 1px black;
+    }
+}
+
+@media (max-width: 768px) {
+    #g-myNavbar ul li {
+        font-size: 24px;
+        margin-right: 20px;
+    }
+    .dropdown-menu > li > a {
+        font-size: 22px;
+    }
+}

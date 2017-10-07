@@ -1,3 +1,14 @@
-.hidden{
+@import 'fonts';
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font: 14px/1.3333 sans-serif;
+    overflow-x: hidden;
+  }
+
+.hidden {
     display: none !important;
 }

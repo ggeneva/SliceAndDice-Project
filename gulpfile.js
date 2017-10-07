@@ -38,6 +38,6 @@ gulp.task('minify:js', ['compile:js'], () => {
 
 // Watch task
 gulp.task('default', function() {
-    gulp.watch('sass/**/*.scss', ['styles']);
+    gulp.watch('./sass/**/*.scss', ['styles']);
     gulp.watch('./app/**/**/*.js', ['compile:js']);
 });
