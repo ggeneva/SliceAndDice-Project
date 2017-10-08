@@ -2,11 +2,12 @@
 
 // Functions for responsive menu
 
+
 $(document).ready(menuSwitch);
 $(window).on('resize', menuSwitch);
 
 function menuSwitch() {
-    if ($(window).innerWidth() <= 751) {
+    if ($(window).innerWidth() <= 768) {
         $('.g-hbox').each(function(index, item) {
             console.log(item);
             $(item).removeClass('g-hbox');

@@ -29,6 +29,7 @@ class PostController {
                     monthOfCreation: getMonthName(),
                     dayOfCreation: getDayOfCreation(),
                     comments: [],
+                    tags: sammy.params.tags.trim().split(' '),
                 };
 
                 postModel.create(formData);
