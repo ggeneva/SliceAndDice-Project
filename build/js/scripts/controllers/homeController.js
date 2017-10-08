@@ -25,7 +25,7 @@ var HomeController = function () {
         key: 'loadHomePage',
         value: function loadHomePage(sammy) {
             _postModel.postModel.getAllPosts().then(function (posts) {
-                _templateLoader.templateLoader.loadTemplate('home', '#app-container', { posts: posts });
+                _templateLoader.templateLoader.loadTemplate('home', '#g-app-container', { posts: posts });
             }).catch(function (err) {
                 console.log(err);
             });

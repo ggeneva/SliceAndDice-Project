@@ -35,7 +35,7 @@ class Validator {
                 },
                 username: {
                     required: true,
-                    minlength: 3,
+                    minlength: 4,
                 },
             },
             highlight: function(element) {
@@ -54,7 +54,13 @@ class Validator {
                 },
                 content: {
                     required: true,
-                    minlength: 50,
+                    minlength: 20,
+                },
+               category: {
+                    required: true,
+                },
+                image: {
+                    // TO DO
                 },
             },
             highlight: function(element) {

@@ -23,11 +23,6 @@ class UserModel {
     updateProfile(data) {
         return this.database.updateUserProfile(data);
     }
-
-    createUserComment(data) {
-        console.log('enter');
-        this.dataBase.createComment(data);
-    }
 }
 
 const userModel = new UserModel(dataBase);

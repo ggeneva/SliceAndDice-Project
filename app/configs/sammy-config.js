@@ -23,6 +23,7 @@ class Router {
             this.get('#/login', userController.loadLoginPage);
             this.post('#/login', userController.login);
             this.get('#/sign-out', userController.signOut);
+            this.get('#/profile', userController.loadProfile);
 
             // Users-comments
             this.post('#/posts/:id/create-comment', userController.createComment);

@@ -2,24 +2,49 @@
     <div class="row">
         <form action="#/create-post" id="post-form" method="post">
             <div class="form-group">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" name="content" id="content" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category  </label>
+                    <select name="category" id="category" style="color:black" required>
+                    <option disabled selected>Please select the category</option>
+                    <option>automotive</option>
+                    <option>carsandtrucks</option>
+                    <option>classics</option>
+                    <option>engines</option>
+                    <option>entertainment</option>
+                    <option>politics</option>
+                    <option>sportandsupercars</option>
+                    <option>upandcoming</option>
+                </select>
+                </div>
                 <label for="image">Image</label>
                 <input class="form-control" id="image" type="file" accept="image/*" name="image" required>
             </div>
             <div class="form-group">
-                <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" id="title" placeholder="Title" required>
-            </div>
-            <div class="form-group">
-                <label for="content">Content</label>
-                <textarea class="form-control" name="content" id="content" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input class="form-control" type="text" name="category" id="category" placeholder="Category" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="CREATE" class="btn btn-success btn-submit-form">
+                <input type="submit" value="PUBLISH POST" class="btn btn-success btn-submit-form">
             </div>
         </form>
     </div>
 </div>
+<script>
+    $(function () {
+        $("#speed").selectmenu();
+
+        $("#files").selectmenu();
+
+        $("#number")
+            .selectmenu()
+            .selectmenu("menuWidget")
+            .addClass("overflow");
+
+        $("#salutation").selectmenu();
+    });
+
+</script>

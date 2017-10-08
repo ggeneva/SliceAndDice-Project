@@ -56,7 +56,7 @@ var PostController = function () {
         value: function loadCreatePostPage(sammy) {
             _postModel.postModel.isUserLoggedIn().then(function (isLoggedIn) {
                 if (isLoggedIn) {
-                    _templateLoader.templateLoader.loadTemplate('create-post', '#app-container').then(function () {
+                    _templateLoader.templateLoader.loadTemplate('create-post', '#g-app-container').then(function () {
                         _validator.validator.validatePost();
                     });
                 } else {
@@ -68,7 +68,7 @@ var PostController = function () {
         key: 'loadPost',
         value: function loadPost(sammy) {
             _postModel.postModel.getPost(sammy.params.id).then(function (post) {
-                _templateLoader.templateLoader.loadTemplate('post', '#app-container', post);
+                _templateLoader.templateLoader.loadTemplate('post', '#g-app-container', post);
             }).catch(function (err) {
                 console.log(err);
             });
@@ -79,7 +79,7 @@ var PostController = function () {
             _postModel.postModel.getPosts({ prop: 'category',
                 value: sammy.params.category }).then(function (posts) {
                 console.log(sammy.params.category);
-                _templateLoader.templateLoader.loadTemplate('category', '#app-container', { posts: posts });
+                _templateLoader.templateLoader.loadTemplate('category', '#g-app-container', { posts: posts });
             }).catch(function (err) {
                 console.log(err);
             });

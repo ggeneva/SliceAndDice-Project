@@ -94,7 +94,7 @@ var UserController = function () {
         value: function loadRegisterPage(sammy) {
             _userModel.userModel.isUserLoggedIn().then(function (isLoggedIn) {
                 if (!isLoggedIn) {
-                    _templateLoader.templateLoader.loadTemplate('register', '#app-container').then(function () {
+                    _templateLoader.templateLoader.loadTemplate('register', '#g-app-container').then(function () {
                         _validator.validator.validateRegister();
                     });
                 } else {
@@ -107,7 +107,7 @@ var UserController = function () {
         value: function loadLoginPage(sammy) {
             _userModel.userModel.isUserLoggedIn().then(function (isLoggedIn) {
                 if (!isLoggedIn) {
-                    _templateLoader.templateLoader.loadTemplate('login', '#app-container').then(function () {
+                    _templateLoader.templateLoader.loadTemplate('login', '#g-app-container').then(function () {
                         _validator.validator.validateLogin();
                     });
                 } else {

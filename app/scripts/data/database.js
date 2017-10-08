@@ -24,7 +24,7 @@ class DataBase {
     }
 
     onAuthStateChanged(callback) {
-        return this.auth.onAuthStateChanged(function (user) {
+        return this.auth.onAuthStateChanged(function(user) {
             callback(user);
         });
     }
@@ -41,27 +41,20 @@ class DataBase {
                 console.log(err.message);
             });
     }
-    /* createComment(data) {
-        console.log('enter');
-        this.database.ref('posts/${data.postId}/'.child('comments')
-                           + data.authorUid + data.dateOfCreation)
-            .set(data)
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }*/
     createComment(data) {
-        console.log('v bazata vliza');
-        this.database.ref('comments/').push(data).catch((err) => {
+        const path = 'posts/' + data.postId + '/comments';
+        this.database.ref(path)
+        .push(data).catch((err) => {
             console.log(err.message);
         });
-        console.log('v bazata vliza vtori put');
-        this.database.ref('proba/${data.postId}/'.child('comments')
-            + data.authorUid + data.dateOfCreation)
-            .set(data)
-            .catch((err) => {
-                console.log(err.message);
-            });
+    }
+
+    createSubComment(data) {
+        const path = 'posts/' + data.postId + '/comments' + data.commentId;
+        this.database.ref(path)
+        .push(data).catch((err) => {
+            console.log(err.message);
+        });
     }
 
     getAllPosts() {

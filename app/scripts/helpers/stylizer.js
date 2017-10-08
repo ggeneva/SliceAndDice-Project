@@ -2,12 +2,6 @@
 
 // Functions for responsive menu
 
-function changeLogo(x) {
-    x.classList.toggle('change');
-    $('#g-mobile-logo').removeClass('hidden');
-    $('.g-logo-box').addClass('hidden');
-}
-
 $(document).ready(menuSwitch);
 $(window).on('resize', menuSwitch);
 
