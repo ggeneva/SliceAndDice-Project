@@ -10,99 +10,201 @@
   <title>The Style</title>
 </head>
 
-<body class = "g-style">
+<body>
   <div class="g-wrapper">
-  <!--  <header>
-    <div>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link nav-link-active" href="#/home">HOME</a>
-        </li>
-        <li class="nav-item isLogged">
-          <a class="nav-link " href="#/register">REGISTER</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/posts/?category=fashion">USERS NEWS</a>
-        </li>
-        <li class="nav-item isLogged">
-          <a class="nav-link" href="#/login">LOGIN</a>
-        </li>
-        <li class="nav-item userIsLogged hidden">
-          <a class="nav-link" href="#/create-post">CREATE POST</a>
-        </li>
-        <li class="nav-item userIsLogged hidden">
-          <a class="nav-link " href="#/profile">MY PROFILE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link hidden" href="#/sign-out" id="logout">LOGOUT</a>
-        </li>
-      </ul>
-    </div>
-    </nav>
-  </header> -->
-  <header>
-    <div class="g-logo-box">
-      <img id="g-logo" src="./images/Logo.png" alt="THE STYLE">
-    </div>
-    <nav class="g-navbar">
-      <div class="navbar-header">
-        <button type="button" onclick="changeLogo(this)" class="navbar-toggle" data-toggle="collapse" data-target="#g-myNavbar">
+    <header>
+      <div class="g-logo-box">
+        <img id="g-logo" src="./images/Logo.png" alt="THE STYLE">
+      </div>
+      <nav class="g-navbar">
+        <div class="navbar-header">
+          <button type="button" onclick="changeLogo(this)" class="navbar-toggle" data-toggle="collapse" data-target="#g-myNavbar">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
           </button>
-        <img id="g-mobile-logo" src="./images/Logo.png" alt="THE STYLE">
+          <img id="g-mobile-logo" src="./images/Logo.png" alt="THE STYLE">
+        </div>
+        <div class="collapse navbar-collapse g-reset g-hbox" id="g-myNavbar">
+          <ul class="g-reset  g-hbox">
+            <li><a class="g-bg-yellow" href="#/home">Home</a></li>
+            <li><a href="#/posts/?category=entertainment">ENTERTAINMENT</a></li>
+            <li><a href="#/posts/?category=fashion">FASHION</a></li>
+            <li><a href="#/posts/?category=politics">POLITICS</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">AUTOMOTIVE</a>
+              <ul class="g-reset dropdown-menu">
+                <li>
+                  <a href="#/posts/?category=carsandtrucks">
+                    <div id="g-sub-li-nav-pic"></div>CARS AND TRUCKS</a>
+                </li>
+                <li>
+                  <a href="#/posts/?category=engines">
+                    <div id="g-sub-li-nav-pic"></div>ENGINES</a>
+                </li>
+                <li>
+                  <a href="#/posts/?category=sportandsupercars">
+                    <div id="g-sub-li-nav-pic"></div>SPORT AND SUPERCARS</a>
+                </li>
+                <li>
+                  <a href="#/posts/?category=upandcoming">
+                    <div id="g-sub-li-nav-pic"></div>UP AND COMING</a>
+                </li>
+                <li>
+                  <a href="#/posts/?category=classics">
+                    <div id="g-sub-li-nav-pic"></div>CLASSICS</a>
+                </li>
+              </ul>
+            </li>
+            <li class="userIsLogged"><a href="#/profile">MY PROFILE</a></li>
+            <li class="userIsLogged"><a href="#/create-post">CREATE POST</a></li>
+            <li class="isLogged"><a href="#/login">LOGIN</a></li>
+            <li class="isLogged"><a href="#/register">REGISTER</a></li>
+            <li class="userIsLogged"><a href="#/sign-out">LOG-OUT</a></li>
+            <li class="g-flex"></li>
+            <li>
+              <form class="g-search-form" action="#/home" id="search-form" method="post">
+                <input class="g-search-form g-search-form-text" id="search-form" type="text" placeholder="Search this website...">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="g-app-container">
+
+    </main>
+
+    <footer>
+      <div class="g-reset container-fluid g-footer-container">
+        <div class="g-reset g-footer-content">
+          <div class="g-footer-header">RECENT COMMENTS</div>
+          <ul>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Fusce suscipit sapien sit amet</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sapien placerat ultrices vivamus sed</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Massa ac metus gravida dignissim eges</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Posuere lorem sed ipsum urna facilisis</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Quis eleifend ut sodales sed lectus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Integer felis eu ipsum malesuada luctus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sed pharetra eleifend ante vitae fermen</a>
+            </li>
+          </ul>
+        </div>
+        <div class="g-reset g-footer-content">
+          <div class="g-footer-header">CUSTOM TEXT WIDGET</div>
+          <div>Fusce suscipit sapien sit amet sapien placerat ultrices. Vivamus sed massa ac metus gravida dignissim egestas posuere
+            lorem. Sed ipsum urna, facilisis quis eleifend ut, sodales sed lectus.  Sed ipsum urna, facilisis quis eleifend ut, sodales sed lectus. 
+            Integer felis eu ipsum malesuada luctus. Sed pharetra eleifend ante vitae fermentum.
+            Praesent fermentum volutpat porta.Praesent fermentum volutpat porta.Praesent fermentum volutpat porta.
+            Praesent fermentum volutpat porta.
+          </div>
+        </div>
+        <div class="g-reset g-footer-content">
+          <div class="g-footer-header">RECENT COMMENTS</div>
+          <ul>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Fusce suscipit sapien sit amet</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sapien placerat ultrices vivamus sed</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Massa ac metus gravida dignissim eges</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Posuere lorem sed ipsum urna facilisis</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Quis eleifend ut sodales sed lectus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Integer felis eu ipsum malesuada luctus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sed pharetra eleifend ante vitae fermen</a>
+            </li>
+          </ul>
+        </div>
+        <div class=" g-reset g-footer-content">
+          <div class="g-footer-header">RECENT COMMENTS</div>
+          <ul>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Fusce suscipit sapien sit amet</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sapien placerat ultrices vivamus sed</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Massa ac metus gravida dignissim eges</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Posuere lorem sed ipsum urna facilisis</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Quis eleifend ut sodales sed lectus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Integer felis eu ipsum malesuada luctus</a>
+            </li>
+            <li>
+              <a>
+                <div id="g-sub-li-nav-pic"></div>Sed pharetra eleifend ante vitae fermen</a>
+            </li>
+          </ul>
+        </div>
+        <br>
+        <p class="g-footer-credits"> Telerik Academy  <b>Project</b> | Made by  <b>Gizdava<b></p>
       </div>
-      <div class="collapse navbar-collapse g-reset g-hbox" id="g-myNavbar">
-        <ul class="g-reset  g-hbox">
-          <li><a class="g-bg-yellow"  href="#/home">Home</a></li>
-          <li><a href="#/posts/?category=entertainment">ENTERTAINMENT</a></li>
-          <li><a href="#/posts/?category=fashion">FASHION</a></li>
-          <li><a href="#/posts/?category=politics">POLITICS</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">AUTOMOTIVE</a>
-            <ul class="g-reset dropdown-menu">
-              <li><a href="#/posts/?category=carsandtrucks"><div id="g-sub-li-nav-pic"></div>CARS AND TRUCKS</a>
-              </li>
-              <li><a href="#/posts/?category=engines"><div id="g-sub-li-nav-pic"></div>ENGINES</a></li>
-              <li><a href="#/posts/?category=sportandsupercars"><div id="g-sub-li-nav-pic"></div>SPORT AND SUPERCARS</a></li>
-              <li><a href="#/posts/?category=upandcoming"><div id="g-sub-li-nav-pic"></div>UP AND COMING</a></li>
-              <li><a href="#/posts/?category=classics"><div id="g-sub-li-nav-pic"></div>CLASSICS</a></li>
-            </ul>
-          </li>
-          <li class="userIsLogged" ><a href="#/profile">MY PROFILE</a></li>
-          <li class="userIsLogged" ><a href="#/create-post">CREATE POST</a></li>
-          <li class="isLogged" ><a href="#/login">LOGIN</a></li>
-          <li class="isLogged" ><a href="#/register">REGISTER</a></li>
-          <li class="userIsLogged" ><a href="#/sign-out">LOG-OUT</a></li>
-          <li class="g-flex"></li>
-          <li>
-            <form class="g-search-form" action="#/home" id="search-form" method="post">
-              <input class="g-search-form g-search-form-text" id="search-form" type="text" placeholder="Search this website...">
-            </form>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    </footer>
 
-  <main id="app-container"></main>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/systemjs/dist/system.js"></script>
+    <script src="./configs/system-config.js"></script>
+    <script src="libs/sammy/lib/min/sammy-latest.min.js"></script>
+    <script src="libs/handlebars/dist/handlebars.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./scripts/helpers/stylizer.js"></script>
 
-  <div class="g-check-media"></div>
-  <script src="libs/jquery/dist/jquery.min.js"></script>
-  <script src="libs/systemjs/dist/system.js"></script>
-  <script src="./configs/system-config.js"></script>
-  <script src="libs/sammy/lib/min/sammy-latest.min.js"></script>
-  <script src="libs/handlebars/dist/handlebars.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-  <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./scripts/helpers/stylizer.js"></script>
-
-  <script>
-    System.import('main');
-  </script>
-</div>
+    <script>
+      System.import('main');
+    </script>
+  </div>
 </body>
 
 </html>

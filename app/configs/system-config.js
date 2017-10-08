@@ -29,6 +29,7 @@ SystemJS.config({
         // Models
         'user-model': '../scripts/data/models/userModel.js',
         'post-model': '../scripts/data/models/postModel.js',
+        'comment-model': '../scripts/data/models/commentModel.js',
 
     },
     packages: {

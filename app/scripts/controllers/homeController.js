@@ -9,7 +9,7 @@ class HomeController {
     loadHomePage(sammy) {
         postModel.getAllPosts()
             .then((posts) => {
-                templateLoader.loadTemplate('home', '#app-container',
+                templateLoader.loadTemplate('home', '#g-app-container',
                     { posts: posts });
             }).catch((err) => {
                 console.log(err);

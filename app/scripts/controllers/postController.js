@@ -39,7 +39,7 @@ class PostController {
     loadCreatePostPage(sammy) {
         postModel.isUserLoggedIn().then((isLoggedIn) => {
             if (isLoggedIn) {
-                templateLoader.loadTemplate('create-post', '#app-container')
+                templateLoader.loadTemplate('create-post', '#g-app-container')
                     .then(() => {
                         validator.validatePost();
                     });
@@ -52,7 +52,7 @@ class PostController {
     loadPost(sammy) {
         postModel.getPost(sammy.params.id)
             .then((post) => {
-                templateLoader.loadTemplate('post', '#app-container', post);
+                templateLoader.loadTemplate('post', '#g-app-container', post);
             }).catch((err) => {
                 console.log(err);
             });
@@ -63,7 +63,7 @@ class PostController {
                             value: sammy.params.category })
             .then((posts) => {
                 console.log(sammy.params.category);
-                templateLoader.loadTemplate('category', '#app-container',
+                templateLoader.loadTemplate('category', '#g-app-container',
                     { posts: posts });
             }).catch((err) => {
                 console.log(err);
