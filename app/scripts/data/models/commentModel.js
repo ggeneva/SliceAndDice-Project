@@ -12,6 +12,9 @@ class CommentModel {
     createSubCom(data) {
         this.dataBase.createSubComment(data);
     }
+    createSubReplayCom(data) {
+        this.dataBase.createSubReplayComment(data);
+    }
     getCurrentUser() {
         return this.dataBase.getCurrentUser();
     }

@@ -1,237 +1,292 @@
 <div class="g-app-container p-page">
-    <p class="p-selected-item">Home &#8811; {{category}} &#8811; <b>{{title}}</b></p>
+    <p class="p-selected-item">Home &#8811; {{post.category}} &#8811; <b>{{{post.title}}}</b></p>
     <br>
-    <div class="p-single-post p-border">
-        <aside class="p-post-info">
-            <section class="p-post-image-container">
-                <div class="p-post-category">
-                    {{category}}
-                </div>
-                <img class="p-post-image" src="{{image}}">
-                <div class="p-post-date">
-                    <span>{{monthOfCreation}}</span>
-                    <span>{{dayOfCreation}}</span>
-                </div>
-            </section>
-            <section class="p-post-tags-container">
-                <h3>TAGS</h3>
-                {{#each tags}}
-                <div>{{this}}</div>
-                {{/each}}
-            </section>
-            <section class="p-post-related-posts">
-                <h3>RELATED POSTS</h3>
-                <ul class="g-reset">
-                    <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
-                    <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                    <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
-                </ul>
-            </section>
-            <section class="p-post-share">
-                <h3>SHARE THIS</h3>
-                <span><a><img src="../images/twitter-icon.png"></a></span>
-                <span><a><img src="../images/facebook-icon.png"></a></span>
-                <span><a><img src="../images/middle-icon.png"></a></span>
-                <span><a><img src="../images/reddit-icon.png"></a></span>
-            </section>
-        </aside>
-    </div>
-</div>
-<div class="single-article-image-containter">
-    <img class="single-article-image" src="{{image}}" />
-</div>
-<div>
-    {{{title}}}
-</div>
-
-<div>
-    {{author}}
-</div>
-
-<div class="row">
-    {{{content}}}
-</div>
-<div class="row">
-    {{#each comments}}
-    <li>
-        <<img src="{{this.imageUrl}}" alt="NQQQQQQQQMA SNIMKAAA">{{this.authorName}}</li>
-    {{/each}}
-</div>
-
-<form action="#/posts/{{authorUid}}{{dateOfCreation}}/create-comment" id="post-form" method="post">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input class="form-control" type="text" name="name" id="name" placeholder="" required>
-    </div>
-    <div class="form-group">
-        <label for="imageUrl">ImageUrl</label>
-        <input class="form-control" type="text" name="imageUrl" id="imageUrl" placeholder="" required>
-    </div>
-    <div class="form-group">
-        <label for="content">Content</label>
-        <textarea class="form-control" name="content" id="content" required></textarea>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="CREATE" class="btn btn-success btn-submit-form">
-    </div>
-</form>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<!--
-
-<div class="container g-app-container ">
-
-    <p class="p-selected-item">Home &#8811; {{category}} &#8811; {{post.title}}</p>
-
-    <div class="detailed-review-container">
-        <div class="row no-gutters">
-            <div class="col- da-details">
-                <div class="da-image-container">
-
-                    <div class="da-category">
-                        {{post.category}}
+    <div class="p-page-content">
+        <div class="p-page-block p-single-post-size">
+            <div class="p-single-post p-border">
+                <aside class="p-post-info">
+                    <section class="p-post-image-container">
+                        <div class="p-post-category">
+                            {{post.category}}
+                        </div>
+                        <img class="p-post-image" src="{{post.image}}">
+                        <div class="p-post-date">
+                            <span>{{post.monthOfCreation}}</span>
+                            <span>{{post.dayOfCreation}}</span>
+                        </div>
+                    </section>
+                    <section class="p-post-tags-container">
+                        <h3>TAGS</h3>
+                        {{#each post.tags}}
+                        <div>{{this}}</div>
+                        {{/each}}
+                    </section>
+                    <section class="p-post-related-posts">
+                        <h3>RELATED POSTS</h3>
+                        <ul class="g-reset">
+                            <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                            <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
+                            <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                        </ul>
+                    </section>
+                    <section class="p-post-share">
+                        <h3>SHARE THIS</h3>
+                        <span><a><img src="../images/twitter-icon.png"></a></span>
+                        <span><a><img src="../images/facebook-icon.png"></a></span>
+                        <span><a><img src="../images/middle-icon.png"></a></span>
+                        <span><a><img src="../images/reddit-icon.png"></a></span>
+                    </section>
+                </aside>
+                <article class="p-post-content">
+                    <h2>{{post.title}}</h2>
+                    <h3>POSTED BY {{post.author}} in {{post.category}} | {{counter}} COMMENTS</h3>
+                    <div class="p-post-line"></div>
+                    <div class="p-post-content-text">
+                        {{{post.content}}}
                     </div>
-                    <img class="da-image" src="{{post.image}}">
-                    <div class="da-date">
-                        <span>{{post.dayOfCreation}}</span>
-                        <span> {{post.monthOfCreation}}</span>
+                </article>
+            </div>
+            <div class="p-post-comments-container">
+                <div class="p-post-comments-container-padding  p-border">
+                    <h2> {{counter}} COMMENTS</h2>
+                    <div class="p-post-line"></div>
+                    <div class="p-post-comments">
+                        {{#if post.comments}} {{#each post.comments}}
+                        <div class="p-post-comment">
+                            <div class="p-post-comment-info">
+                                <div class="p-post-comment-info-container">
+                                    <img class="p-post-comment-image" src="{{this.imageUrl}}">
+                                    <div class="p-post-comment-date">
+                                        <span>{{this.monthOfCreation}}</span>
+                                        <span>{{this.dayOfCreation}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container">
+                                <h3>{{this.authorName}}</h3>
+                                <div class="p-post-comment-content">
+                                    {{{this.content}}}
+                                </div>
+                                <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
+                                    title="You need registration or login for comment:" disabled {{/if}}></input>
+                                <form action="#/posts/{{../post.authorUid}}{{../post.dateOfCreation}}/create-sub-comment/{{this.authorUid}}{{this.dateOfCreation}}"
+                                    id="#p-subcomments-form" method="post" class="hidden">
+                                    <textarea class="p-ccf-content" name="content" id="content-sub" required></textarea>
+                                    <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if ../isLogged}} title="You need registration or login for comment:"
+                                        disabled {{/if}}>
+                                </form>
+                                {{#if this.comments}} {{#each this.comments}}
+                                <div class="p-post-comment p-post-comment-sub">
+                                    <div class="p-post-comment-info">
+                                        <div class="p-post-comment-info-container">
+                                            <img class="p-post-comment-image" src="{{this.imageUrl}}">
+                                            <div class="p-post-comment-date">
+                                                <span>{{this.monthOfCreation}}</span>
+                                                <span>{{this.dayOfCreation}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-post-comment-content-container">
+                                        <h3>{{this.authorName}}</h3>
+                                        <div class="p-post-comment-content">
+                                            {{{this.content}}}
+                                        </div>
+                                        <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
+                                            title="You need registration or login for comment:" disabled {{/if}}></input>
+                                        <form action="#/posts/{{../post.authorUid}}{{../post.dateOfCreation}}/create-sub-comment/{{this.authorUid}}{{this.dateOfCreation}}"
+                                            id="#p-subcomments-form" method="post" class="hidden">
+                                            <textarea class="p-ccf-content" name="content" id="content-sub" required></textarea>
+                                            <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if ../isLogged}} title="You need registration or login for comment:"
+                                                disabled {{/if}}>
+                                        </form>
+                                    </div>
+                                </div>
+                                {{#if this.comments}} {{#each this.comments}}
+                                <div class="p-post-comment p-post-comment-sub">
+                                    <div class="p-post-comment-info">
+                                        <div class="p-post-comment-info-container">
+                                            <img class="p-post-comment-image" src="{{this.imageUrl}}">
+                                            <div class="p-post-comment-date">
+                                                <span>{{this.monthOfCreation}}</span>
+                                                <span>{{this.dayOfCreation}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-post-comment-content-container">
+                                        <h3>{{this.authorName}}Beba</h3>
+                                        <div class="p-post-comment-content">
+                                            {{{this.content}}}
+                                        </div>
+                                        <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
+                                            title="You need registration or login for comment:" disabled {{/if}}></input>
+                                        <form action="#/posts/{{../post.authorUid}}{{../post.dateOfCreation}}/create-sub-comment/{{../post.comments.authorUid}}{{../post.comments.dateOfCreation}}/create-sub2-comment/{{this.authorUid}}{{this.dateOfCreation}}"
+                                            id="#p-subcomments-form" method="post" class="hidden">
+                                            <textarea class="p-ccf-content" name="content" id="content-sub" required></textarea>
+                                            <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if ../isLogged}} title="You need registration or login for comment:"
+                                                disabled {{/if}}>
+                                        </form>
+                                    </div>
+                                </div>
+                                {{/each}}{{/if}} {{/each}}{{/if}}
+                            </div>
+                        </div>
+                        <div class="p-post-line"></div>
+                        {{/each}}{{/if}}
                     </div>
-
+                    <h2>LEAVE A COMMENT</h2>
+                    <div class="p-create-comment-form">
+                        <form action="#/posts/{{post.authorUid}}{{post.dateOfCreation}}/create-comment" id="post-form" method="post">
+                            {{#if isLogged}}
+                            <textarea class="p-ccf-anonymous" id="p-ccf-anonymous" disabled></textarea>
+                            <textarea class="p-ccf-anonymous" id="p-ccf-anonymous" disabled></textarea> {{/if}}
+                            <textarea class="p-ccf-content" name="content" id="content" required {{#if isLogged}} disabled {{/if}}></textarea>
+                            <input id="p-toggle-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if isLogged}} title="You need registration or login for comment:"
+                                disabled {{/if}}>
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <div class="da-tags-container">
-                <h3>TAGS</h3>
-                {{#each post.tags}}
-                <span>{{this}}</span> {{/each}}
-            </div>
-            <div class="da-share-icons-container">
-                <h3>SHARE THIS</h3>
-                <span>
-                    <a >
-                     <img src="./images/twitter.png">
-                    </a>
-                </span>
-
-                <span>
-                        <a ><img src="./images/facebook.png">
-                    </a>
-                </span>
-
-                <span>
-                    <a href="#">
-                     <img src="./images/share-icon3.png">
-                    </a>
-                </span>
-
-                <span>
-                    <a href="#">
-                     <img src="./images/share-icon4.png">
-                    </a>
-                </span>
-
-                <span>
-                    <a href="#">
-                     <img src="./images/share-icon5.png">
-                    </a>
-                </span>
-            </div>
         </div>
-
-        <div class="col- da-content-container">
-            <h1>{{post.title}}</h1>
-
-            <div class="da-author">
-                POSTED BY {{post.author}} IN {{post.category}} | {{post.comments.length}} COMMENTS
-            </div>
-
-            <div class="da-content">
-                {{post.content}}
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="row no-gutters justify-content-end article-comments-container-parent">
-    <div class="article-comments-container">
-        <div class="comments-count">
-            {{post.comments.length}} COMMENTS
-        </div>
-
-        <div class="comments-list-container">
-            {{#each post.comments}}
-            <div class="comments-list-item row no-gutters">
-                <div class="col- comment-item-info">
-                    <div class="comment-item-image-container">
-                        <img class="comment-author-avatar" src="https://newsletter-project.herokuapp.com/api/article/image/{{this.authorAvatar}}">
-                        <div class="comment-date">
-                            <span>{{this.dayOfCreation}}</span>
-                            <span>{{this.monthOfCreation}}</span>
+        <div class="p-page-block">
+            <div class="p-page-block-content">
+                <div id="tabs" class="p-tabs p-border">
+                    <ul>
+                        <li><a href="#tabs-1">RECENT</a></li>
+                        <li><a href="#tabs-2">POPULAR</a></li>
+                        <li><a href="#tabs-3">RANDOM</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col- comment-item-contnet-container">
-                    <h4>{{this.authorName}}</h4>
-                    <div class="comment-item-content">
-                        {{this.content}}
-                    </div>
-                </div>
-
-                <input type="button" class="reply-comment-button add-comment-toggler hidden" value="REPLY">
-            </div>
-            <div class="reply-comment-container add-comment-toggler hidden" style="display: none;">
-                <div>REPLY</div>
-
-                <div class="rc-custom-form">
-                    <textarea name="content" rows="4"></textarea>
-                    <div>
-                        <input type="button" value="SUBMIT" class="custom-form-submit" data-id="{{this._id}}">
-                    </div>
-                </div>
-            </div>
-
-            <!-- {{#each replies}}
-            <div class="replied-comments-list-item row no-gutters">
-                <div class="col- replied-comment-item-info">
-                    <div class="replied-comment-item-image-container">
-                        <img class="comment-author-avatar" src="https://newsletter-project.herokuapp.com/api/article/image/{{this.authorAvatar}}">
-                        <div class="comment-date">
-                            <span>{{this.date.month}}</span>
-                            <span>{{this.date.day}}</span>
+                    <div id="tabs-2">
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
+                        </div>
+                        <div class="p-post-comment-small">
+                            <div class="p-post-comment-info-small">
+                                <div class="p-post-comment-info-container-small">
+                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                </div>
+                            </div>
+                            <div class="p-post-comment-content-container-small">
+                                <p>Fusce espirito degfe hje</p>
+                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col- replied-comment-item-contnet-container">
-                    <h4>{{this.author}}</h4>
-                    <div class="replied-comment-item-content">
-                        {{this.content}}
+                    <div id="tabs-3">
+                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula
+                            accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent
+                            taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
+                            Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
+                            Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
                     </div>
                 </div>
+                <div class="p-custom-wd p-border">
+                    <h3>RELATED POSTS</h3>
+                    <ul>
+                        <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                        <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
+                        <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                        <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                        <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
+                        <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                    </ul>
+                </div>
+                <div class="p-custom-wd p-border">
+                    <h3>RELATED POSTS</h3>
+                    <p class="p-custom-wd-text">
+                        Fusce suscipit sapien sit amet sapien placerat ultrices. Vivamus sed massa ac metus gravida dignissim egestas posuere lorem.
+                        Sed ipsum urna, facilisis quis eleifend ut, sodales sed lectus. Integer felis eu ipsum malesuada
+                        luctus. Sed pharetra eleifend ante vitae fermentum. Praesent fermentum volutpat porta. Lorem ipsum
+                        dolor sit amet, consectetur adipiscing elit. Ut dignissim, nibh quis ultricies laoreet, libero justo
+                        suscipit risus, sed sollicitudin odio erat at purus. Quisque molestie venenatis turpis eu adipiscing.
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+                        ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse semper aliquet
+                        odio, id blandit tortor porttitor pulvinar.
+                    </p>
+                </div>
             </div>
-            {{/each}} {{/each}}
-</div>
-<div class="add-comment-container add-comment-toggler hidden">
-    <div>LEAVE A COMMENT</div>
-    <div class="rc-custom-form">
-        <textarea name="content" id="comment-box" rows="8"></textarea>
-        <div>
-            <input type="button" id="submit-comment" value="SUBMIT">
         </div>
     </div>
 </div>
-</div>
-</div>
-</div>
--->
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+
+</script>

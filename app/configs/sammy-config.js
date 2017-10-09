@@ -27,6 +27,9 @@ class Router {
 
             // Users-comments
             this.post('#/posts/:id/create-comment', userController.createComment);
+            this.post('#/posts/:id/create-sub-comment/:idComment', userController.createSubComment);
+            this.post('#/posts/:id/create-sub-comment/:idComment/create-sub2-comment/:idCommentReply',
+                         userController.createSubReplayComment);
 
             // Posts
             this.get('#/posts/:id', postController.loadPost);

@@ -71,7 +71,7 @@ class UserController {
         userModel
             .signOut()
             .then(() => {
-                console.log('you are now loged off');
+                console.log('Log-out successful!');
                 navUser.toggleNavigationUserElement();
                 sammy.redirect('#/');
             }).catch((err) => {
@@ -108,58 +108,85 @@ class UserController {
     loadProfile(sammy) {
         const user = userModel.getCurrentUser();
         templateLoader.loadTemplate('profile', '#g-app-container',
-                                    { user: user });
+            { user: user });
     }
     createComment(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
-            if (!isLoggedIn) {
-                sammy.redirect('#/login');
-            } else {
-                const postId = window.location.href
-                    .split('posts/')[1].split('/')[0];
+            if (isLoggedIn) {
                 const user = userModel.getCurrentUser();
+
                 const formData = {
-                    postId: postId,
-                    imageUrl: sammy.params.imageUrl,
-                    authorName: sammy.params.name,
+                    postId: sammy.params.id,
+                    imageUrl: user.photoURL,
+                    authorName: user.displayName,
                     content: sammy.params.content,
                     authorUid: user.uid,
                     dateOfCreation: Date.now(),
                     monthOfCreation: getMonthName(),
                     dayOfCreation: getDayOfCreation(),
                 };
+
                 console.log(formData);
 
                 commentModel.createCom(formData);
-                sammy.redirect('#/posts/' + postId);
+                sammy.redirect('#/posts/' + sammy.params.id);
+            } else {
+                sammy.redirect('#/login');
             }
-            sammy.redirect('#/register');
         });
     }
     createSubComment(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
-            if (!isLoggedIn) {
-                sammy.redirect('#/login');
-            } else {
-                const postId = window.location.href
-                    .split('posts/')[1].split('/')[0];
+            if (isLoggedIn) {
                 const user = userModel.getCurrentUser();
+
                 const formData = {
-                    postId: postId,
-                    imageUrl: sammy.params.imageUrl,
-                    authorName: sammy.params.name,
+                    postId: sammy.params.id,
+                    imageUrl: user.photoURL,
+                    authorName: user.displayName,
                     content: sammy.params.content,
                     authorUid: user.uid,
                     dateOfCreation: Date.now(),
                     monthOfCreation: getMonthName(),
                     dayOfCreation: getDayOfCreation(),
+                    idComment: sammy.params.idComment,
                 };
+
                 console.log(formData);
 
-                commentModel.createCom(formData);
-                sammy.redirect('#/posts/' + postId);
+                commentModel.createSubCom(formData);
+                sammy.redirect('#/posts/' + sammy.params.id);
+            } else {
+                sammy.redirect('#/login');
             }
-            sammy.redirect('#/register');
+        });
+    }
+
+    createSubReplayComment(sammy) {
+        userModel.isUserLoggedIn().then((isLoggedIn) => {
+            if (isLoggedIn) {
+                const user = userModel.getCurrentUser();
+
+                const formData = {
+                    postId: sammy.params.id,
+                    imageUrl: user.photoURL,
+                    authorName: user.displayName,
+                    content: sammy.params.content,
+                    authorUid: user.uid,
+                    dateOfCreation: Date.now(),
+                    monthOfCreation: getMonthName(),
+                    dayOfCreation: getDayOfCreation(),
+                    idComment: sammy.params.idComment,
+                    idCommentReply: sammy.params.idCommentReplay,
+                };
+
+                console.log(formData);
+
+                commentModel.createSubReplayCom(formData);
+                sammy.redirect('#/posts/' + sammy.params.id);
+            } else {
+                sammy.redirect('#/login');
+            }
         });
     }
 }

@@ -9,7 +9,6 @@ $(window).on('resize', menuSwitch);
 function menuSwitch() {
     if ($(window).innerWidth() <= 768) {
         $('.g-hbox').each(function(index, item) {
-            console.log(item);
             $(item).removeClass('g-hbox');
             $(item).addClass('g-mobile-menu');
         });
@@ -24,3 +23,24 @@ function menuSwitch() {
         $('.g-logo-box').removeClass('hidden');
     }
 }
+function getForm() {
+    console.log('please');
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    const form = $('.p-get-subcomments-form').next();
+    if ((form).hasClass('hidden')) {
+        (form).removeClass('hidden');
+    } else {
+        (form).addClass('hidden');
+    }
+}
+$(document).on('click', '.p-get-subcomments-form', (ev) => {
+    const $this = $(ev.target);
+    const $form = $this.next();
+    if (($form).hasClass('hidden')) {
+        ($form).removeClass('hidden');
+    } else {
+        ($form).addClass('hidden');
+    }
+
+});

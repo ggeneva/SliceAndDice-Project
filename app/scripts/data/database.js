@@ -42,17 +42,32 @@ class DataBase {
             });
     }
     createComment(data) {
-        const path = 'posts/' + data.postId + '/comments';
+        const path = 'posts/' + data.postId + '/comments/'
+                        + data.authorUid + data.dateOfCreation;
         this.database.ref(path)
-        .push(data).catch((err) => {
+        .set(data)
+        .catch((err) => {
             console.log(err.message);
         });
     }
 
     createSubComment(data) {
-        const path = 'posts/' + data.postId + '/comments' + data.commentId;
+        const path = 'posts/' + data.postId + '/comments/'
+        + data.idComment + '/comments/' + data.authorUid + data.dateOfCreation;
         this.database.ref(path)
-        .push(data).catch((err) => {
+        .set(data)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
+    createSubReplayComment(data) {
+        const path = 'posts/' + data.postId + '/comments/'
+        + data.idComment + '/comments/' + data.idCommentReply
+         + '/comments/' + data.authorUid + data.dateOfCreation;
+        this.database.ref(path)
+        .set(data)
+        .catch((err) => {
             console.log(err.message);
         });
     }

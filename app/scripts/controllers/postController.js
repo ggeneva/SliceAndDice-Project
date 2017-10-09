@@ -51,17 +51,42 @@ class PostController {
     }
 
     loadPost(sammy) {
+        // TO DO - refactor it
+
+        let isLogged;
+
+        postModel.isUserLoggedIn().then((isLoggedIn) => {
+            if (isLoggedIn) {
+                isLogged = false;
+            } else {
+                isLogged = true;
+            }
+            console.log(isLogged);
+            return isLogged;
+        });
         postModel.getPost(sammy.params.id)
             .then((post) => {
-                templateLoader.loadTemplate('post', '#g-app-container', post);
+                let counter = 0;
+                if (post.hasOwnProperty('comments')) {
+                    counter = Object.keys(post.comments).length;
+                } else {
+                    counter = 0;
+                }
+                templateLoader.loadTemplate('post', '#g-app-container',
+                    { post: post,
+                    counter: counter,
+                    isLogged: isLogged,
+                    });
             }).catch((err) => {
                 console.log(err);
             });
     }
 
     loadCategory(sammy) {
-        postModel.getPosts({ prop: 'category',
-                            value: sammy.params.category })
+        postModel.getPosts({
+            prop: 'category',
+            value: sammy.params.category,
+        })
             .then((posts) => {
                 console.log(sammy.params.category);
                 templateLoader.loadTemplate('category', '#g-app-container',

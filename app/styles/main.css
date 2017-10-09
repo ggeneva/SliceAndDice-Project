@@ -304,43 +304,58 @@ footer {
     color: #7a7575;
     width: 100%;
 }
+.p-page-content {
+    display: flex;
+}
+.p-page-block {
+    display: block;
+    
+}
+
 .p-selected-item {
     font-size: 13px;
     margin-left: 80px;
 }
+.p-single-post-size {
+    width: 1200px;
+}
 .p-single-post {
-    width: 72%;
+    width: 100%;
     height: 685px;
     background: #ffffff;
-    display: inline-block;
+    display: flex;
 }
 .p-post-info {
+    display: block;
     width: 254px;
     padding-left: 29px;
-    padding-top: 35px;
+    padding-top: 27px;
     padding-right:28px;
 }
 .p-post-image-container {
     width: 188px;
     height: 185px;
-    box-shadow: 0 0 5px grey;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
     position: relative;
 }
 .p-post-image {
     width: 100%;
     height: 100%;
-    z-index: 1000
+    z-index: 1000;
+    border: 5px solid #efefef;
 }
 .p-post-category {
     font-family: LeagueGothic;
     background-color: #9a1d0d;
     color: #ffffff;
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px #0000;
     letter-spacing: 2px;
     display: inline-block;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 5px;
+    top: 5px;
     padding: 1px 2px 1px 3px;
 }
 .p-post-date {
@@ -351,11 +366,11 @@ footer {
     font-size: 42px;
     letter-spacing: 1px;
     top: 20px;
-    right: 2px
+    right: 10px
 }
 
 .p-post-date span {
-    display: block
+    display: block;
 }
 
 .p-post-date span:nth-child(2) {
@@ -367,9 +382,11 @@ footer {
 }
 .p-post-tags-container h3 ,
 .p-post-related-posts h3 ,
-.p-post-share h3 {
+.p-post-share h3,
+.p-post-comment-content-container h3 {
     font-family: LeagueGothic;
     color: #2c2c2c;
+    text-shadow: 1px 1px #FFFFFF;
 }
 .p-post-tags-container div {
     display: inline-block;
@@ -405,6 +422,9 @@ footer {
     width: 27px;
     height: 27px;
     margin-right: 12px;
+    border: transparent 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px rgba(55, 57, 55, 0.1);
 }
 
 .p-border {
@@ -413,9 +433,279 @@ footer {
     border-top:9px solid;
     border-bottom:9px solid;
 }
-  
+.p-post-content {
+    display: block;
+    padding-right: 36px;
+    width: 946px;
+}
+.p-post-line {
+    border-top: 1px dashed #a6a6a6;;
+    width: 100%;
+}
+.p-post-content h2,
+.p-post-comments-container h2 {
+    color: #9a1d0d;
+    font-size: 36px;
+    font-family: LeagueGothic;
+    text-transform: uppercase;
+}
+.p-post-content h3 {
+    margin-top: -5px;
+    color: #212121;
+    font-size: 18px;
+    font-family: LeagueGothic;
+    text-transform: uppercase;
+}
 
-/* Register and Login page */
+.p-post-content-text {
+    color: #7a7575;
+    font-size: 13px; 
+    margin-top: 12px;
+    margin-bottom: 40px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    /* Adds a hyphen where the word breaks */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.p-post-comments-container {
+    padding-top: 15px;
+    padding-left: 228px;
+    width: 100%;
+
+}
+
+.p-post-comments-container-padding {
+    padding: 6px 35px 30px 28px;
+    background: #ffffff;
+}
+
+.p-post-comments-container .p-post-line {
+    margin-top: 5px;
+    margin-bottom: 27px;
+}
+
+.p-post-comment {
+    display: flex;
+    margin-bottom: 18px;
+}
+.p-post-comment-info {
+    display: block;
+}
+
+.p-post-comment-info-container {
+    width: 72px;
+    height: 72px;
+    position: relative;
+}
+
+.p-post-comment-image{
+    width: 100%;
+    height: 100%;
+    border: 4px solid #efefef;
+}
+.p-post-comment-date {
+    font-family: LeagueGothic;
+    color: white;
+    text-shadow: 1px 1px 1px grey, -1px -1px 1px grey;
+    position: absolute;
+    font-size: 28px;
+    letter-spacing: 1px;
+    top: 0;
+    right: 10px;
+}
+.p-post-comment-date span {
+    display: block;
+}
+.p-post-comment-date span:nth-child(2) {
+    text-align: right;
+    margin-top: -16px;
+}
+
+.p-post-comment-content-container {
+    display: block;
+    margin-left: 17px;
+    width: 100%;
+}
+.p-post-comment-content-container h3 {
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+.p-post-comment-content {
+    font-family: DroidSans;
+    color: #7a7575;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    word-wrap: break-word; 
+}
+.p-replay-btn {
+    font-size: 11px;
+    width: 50px;
+    height: 30px;
+    float: right;
+    font-family: DroidSans;
+    color: #6e6e6e;
+    border: none;
+    background: #efefef;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.p-create-comment-form {
+    width: 510px;
+    margin-bottom: 37px;
+}
+.p-create-comment-form textarea,
+.p-post-comment-content-container textarea {
+    resize: none;
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #d6d6d6;
+}
+.p-create-comment-form textarea:disabled {
+    background: #f6f6f6;
+    border: 1px solid #d6d6d6;
+}
+
+.p-ccf-anonymous {
+    width: 68%;
+}
+
+.p-ccf-content {
+    width: 100%;
+    height: 9.00vw;
+}
+
+.p-ccf-btn:disabled {
+    color: #e7e7e7;
+}
+
+.p-post-comment-sub {
+    margin-top: 50px;
+}
+
+.p-page-block-content {
+    margin-left: 15px;
+    margin-right: 64px;
+    width: 378px;
+}
+.p-tabs {
+    height: 337px;
+    background: #e7e7e7;
+    border-top: none;
+    box-shadow: 1px solid #000000;
+
+}
+
+.p-tabs ul li,
+.p-custom-wd h3 {
+    font-family: LeagueGothic;
+    font-size: 30px;
+    color: #9a1d0d;
+    text-decoration: none;
+    text-align:center;
+    padding: auto;
+    padding-top: 12px;
+    background: #d6d6d6;
+}
+.p-tabs ul {
+    display: table;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.p-tabs ul > li:active, 
+.p-tabs ul > li:focus,
+.p-tabs ul > li:hover  {
+    background: #e7e7e7;
+}
+.p-tabs ul > li {
+    display: table-cell;
+}
+.p-tabs ul li a:active,
+.p-tabs ul li a:focus,
+.p-tabs ul li a:hover {
+    color: #9a1d0d;
+    border: none;
+    text-decoration: none;
+}
+.p-tabs li:nth-child(2) {
+    border-right: 1px dotted #969696;
+    border-left: 1px dotted #969696;
+}
+.p-tabs .p-post-comment-image-small {
+    width: 38px;
+    height: 38px;
+    border: 3px solid #d6d6d6;
+    margin: 15px 10px 11px 18px;
+}
+.p-tabs .p-post-comment-small {
+    border-top: 1px dotted #969696;
+    display: flex;
+}
+.p-tabs .p-post-comment-small:nth-last-child(1) {
+    border-bottom: 1px dotted #969696;
+    margin-bottom:0px;
+}
+.p-tabs .p-post-comment-info-small,
+.p-tabs .p-post-comment-content-container-small {
+    display: block;
+}
+
+.p-post-comment-content-container-small p:nth-child(1) {
+    color: #2b2b2b;
+    text-shadow: 0.4px 0.4px #FFFFFF;
+    font-size: 14px;
+    font-family: DroidSans;
+    margin-top: 17px;
+    margin-bottom: 0px;
+}
+
+.p-post-comment-content-small {
+    font-size: 11px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #a8a8a8;
+    text-shadow: 0.2px 0.2px #FFFFFF;
+}
+
+.p-custom-wd {
+    height: 278px;
+    background: #e7e7e7;
+    margin-top: 16px;
+    box-shadow: 1px solid #000000;
+    border-top: none;
+    text-overflow: clip;
+    overflow: hidden;
+    
+}
+.p-custom-wd h3 {
+    background: #e7e7e7;
+    border-bottom: 1px dotted #969696;
+    padding-bottom: 14px;
+}
+.p-custom-wd img {
+    width: 10px;
+    height: 10px;
+}
+.p-custom-wd ul {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 2.2;
+}
+.p-custom-wd-text {
+    font-size: 13px;
+    margin: 0px 30px 44px 24px;
+}
+
+
+/* Register/Login/Create Post pages*/
 .error {
     color: red;
 }
@@ -440,7 +730,10 @@ footer {
 .r-page ::-moz-placeholder {  /* Firefox 19+ */
        font-size:1.5vw!important;
 }
-
+.form-control {
+    font-size: 18px;
+    font-family: DroidSans;
+}
 /* Responsive for desktop more than 1800px */
 @media (min-width: 1800px) {
 
@@ -597,6 +890,9 @@ footer {
     }
     .dropdown-menu > li > a {
         font-size: 22px;
+    }
+    .form-control {
+        font-size: 13px;
     }
 }
 
