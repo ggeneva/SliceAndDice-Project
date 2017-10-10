@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var MONTH_NAMES=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],getMonthName=function(){var e=(new Date).getMonth();return MONTH_NAMES[e]},getDayOfCreation=function(){return(new Date).getDay()};exports.getMonthName=getMonthName,exports.getDayOfCreation=getDayOfCreation;
