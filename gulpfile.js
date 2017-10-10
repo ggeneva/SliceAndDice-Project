@@ -1,9 +1,10 @@
-/* global $ */
-
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
+const plugins = require('gulp-load-plugins');
+
+const $ = plugins();
 
 gulp.task('configs', function() {
     gulp.src('app/configs/*.js')
