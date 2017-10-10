@@ -54,9 +54,9 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('views', function() {
-    gulp.src('app/views/**/*')
-        .pipe(gulp.dest('dist/views'));
+gulp.task('templates', function() {
+    gulp.src('app/templates/*')
+        .pipe(gulp.dest('dist/templates'));
 });
 
 gulp.task('fonts', function() {
@@ -65,7 +65,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('build:dist',
-['scripts', 'styles', 'views', 'html', 'configs', 'fonts', 'images']);
+['scripts', 'styles', 'templates', 'html', 'configs', 'fonts', 'images']);
 
 
 // Sass
