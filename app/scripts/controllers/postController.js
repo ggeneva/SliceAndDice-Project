@@ -105,7 +105,8 @@ class PostController {
                 templateLoader.loadTemplate('category', '#g-app-container',
                     {
                         posts: filteredPosts, countPages,
-                        pageNumbers, pageSize, pagination: true
+                        pageNumbers, pageSize, pagination: true,
+                        category: sammy.params.category,
                     });
             }).catch((err) => {
                 console.log(err);

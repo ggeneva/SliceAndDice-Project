@@ -822,7 +822,41 @@ footer {
     margin: 0px 30px 44px 24px;
 }
 
+/* Category page */
 
+.c-selected-category {
+    font-size: 13px;
+    font-family: DroidSans;
+    color: #8e8e8e;
+}
+
+.c-page {
+    display: flex;
+}
+
+.c-posts {
+    display: block;
+    width: 1256px;
+    margin-left: 90px;
+}
+
+.c-recent {
+    display: block;
+    width: 234px;
+    margin-top:12px;
+}
+
+.c-posts .h-container, 
+.c-posts .h-pagination-container{
+    margin: 0px;
+}
+
+.c-recent .p-custom-wd {
+    font-size: 13px;
+    font-family: DroidSans;
+    color: #7a7575;
+
+}
 /* Register/Login/Create Post pages*/
 .error {
     color: red;
@@ -953,6 +987,9 @@ footer {
         margin-top: 40px;
         margin-left: 50px;
         margin-right: 10px;
+    }
+    .c-page {
+        display: block;;
     }
     
 }

@@ -1,44 +1,73 @@
 <div class="g-app-container g-app-container-home ">
-    <div class="g-reset h-container">
-        {{#each posts}}
-        <article class="p-border">
-            <a class="g-reset" href="#/posts/{{authorUid}}{{dateOfCreation}}">
-                <section class="p-post-image-container">
-                    <div class="p-post-category">
-                        {{category}}
-                    </div>
-                    <img class="p-post-image" src="{{image}}">
-                    <div class="p-post-date">
-                        <span>{{monthOfCreation}}</span>
-                        <span>{{dayOfCreation}}</span>
-                    </div>
-                </section>
-                <section class="h-post-content">
-                    <h2 class="g-reset">{{{title}}}</h2>
-                    <h3 class="g-reset">POSTED BY {{{author}}}</h3>
-                </section>
-                <section>
-                <div class="g-dotted"></div>
-                <div class="h-post-content-text">{{{content}}}</div>
-                <section>
-        </article>
-        {{/each}}
-    </div>
+    <div class="c-page">
+        <div class="c-posts">
+            <div class="g-reset h-container">
+                <p class="c-selected-category">Home &#8811; <b>{{{category}}}</b></p>
+                {{#each posts}}
+                <article class="p-border">
+                    <a class="g-reset" href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                        <section class="p-post-image-container">
+                            <div class="p-post-category">
+                                {{category}}
+                            </div>
+                            <img class="p-post-image" src="{{image}}">
+                            <div class="p-post-date">
+                                <span>{{monthOfCreation}}</span>
+                                <span>{{dayOfCreation}}</span>
+                            </div>
+                        </section>
+                        <section class="h-post-content">
+                            <h2 class="g-reset">{{{title}}}</h2>
+                            <h3 class="g-reset">POSTED BY {{{author}}}</h3>
+                        </section>
+                        <section>
+                            <div class="g-dotted"></div>
+                            <div class="h-post-content-text">{{{content}}}</div>
+                            <section>
+                </article>
+                {{/each}}
+            </div>
 
-    {{#if pagination}}
-    <div class="h-pagination-container">
-        <div class="h-pagination-left" id="previous">
-            <a href="#/home/?page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
+            {{#if pagination}}
+            <div class="h-pagination-container">
+                <div class="h-pagination-left" id="previous">
+                    <a href="#/home/?category={{category}}&page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
+                </div>
+                <div class="g-flex"></div>
+                <div class="h-pagination-numbers">
+                    {{#each pageNumbers}}
+                    <a href="#/home/?category={{../category}}&page={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
+                </div>
+                <div class="g-flex"></div>
+                <div class="h-pagination-right" id="next">
+                    <a href="#/home/?category={{category}}&page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
+                </div>
+            </div>
+            {{/if}}
         </div>
-        <div class="g-flex"></div>
-        <div class="h-pagination-numbers">
-            {{#each pageNumbers}}
-            <a href="#/home/?page={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
-        </div>
-        <div class="g-flex"></div>
-        <div class="h-pagination-right" id="next">
-            <a href="#/home/?page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
+        <div class="c-recent">
+            <div class="p-custom-wd p-border">
+                <h3>RELATED POSTS</h3>
+                <ul>
+                    <li><a><img src="../images/li-icon.png">&nbspSay hi to the world</a></li>
+                    <li><a><img src="../images/li-icon.png">&nbspNew car on the street!!!</a></li>
+                    <li><a><img src="../images/li-icon.png">&nbspBrowse channels only here</a></li>
+                    <li><a><img src="../images/li-icon.png">&nbspSay hi to the world</a></li>
+                    <li><a><img src="../images/li-icon.png">&nbspNew car on the street!!!</a></li>
+                    <li><a><img src="../images/li-icon.png">&nbspBrowse channels only here</a></li>
+                </ul>
+            </div>
+            <div class="p-custom-wd p-border">
+                <h3>RELATED POSTS</h3>
+                <ul>
+                    <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                    <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
+                    <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                    <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                    <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
+                    <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    {{/if}}
 </div>
