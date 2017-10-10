@@ -13,9 +13,10 @@ class Router {
 
             // Home
             this.get('#/', (sammy) => {
-                sammy.redirect('#/home');
+                sammy.redirect('#/home/?page=1&pageSize=11');
             });
-            this.get('#/home', homeController.loadHomePage);
+            this.get('#/home/?', homeController.loadHomePage);
+            
 
             // User 
             this.get('#/register', userController.loadRegisterPage);

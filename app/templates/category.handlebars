@@ -1,45 +1,43 @@
-<div class="container g-app-container">
-    <div class="row">
+<div class="g-app-container g-app-container-home ">
+    <div class="g-reset h-container">
         {{#each posts}}
-        <div class="col">
-            <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
-                <div class="single-article-image-containter">
-                    <img class="single-article-image" src="" />
-                </div>
-
-                <div class="row">
-                    {{{title}}}
-                </div>
-
-                <div class="row">
-                    {{author}}
-                </div>
-
-                <div class="row">
-                    {{{content}}}
-                </div>
-                <div class="row">
-                    {{category}}
-                </div>
-                
-            </a>
-        </div>
+        <article class="p-border">
+            <a class="g-reset" href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                <section class="p-post-image-container">
+                    <div class="p-post-category">
+                        {{category}}
+                    </div>
+                    <img class="p-post-image" src="{{image}}">
+                    <div class="p-post-date">
+                        <span>{{monthOfCreation}}</span>
+                        <span>{{dayOfCreation}}</span>
+                    </div>
+                </section>
+                <section class="h-post-content">
+                    <h2 class="g-reset">{{{title}}}</h2>
+                    <h3 class="g-reset">POSTED BY {{{author}}}</h3>
+                </section>
+                <section>
+                <div class="g-dotted"></div>
+                <div class="h-post-content-text">{{{content}}}</div>
+                <section>
+        </article>
         {{/each}}
     </div>
 
     {{#if pagination}}
-    <div class="row pagination-container no-gutters">
-        <div class="d-flex justify-content-start" id="previous">
-            <a href="#/home/?pageNumber=1&pageSize={{pageSize}}">«</a>
+    <div class="h-pagination-container">
+        <div class="h-pagination-left" id="previous">
+            <a href="#/home/?page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
         </div>
-
-        <div class="col d-flex justify-content-center pages">
+        <div class="g-flex"></div>
+        <div class="h-pagination-numbers">
             {{#each pageNumbers}}
-            <a href="#/home/?pageNumber={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
+            <a href="#/home/?page={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
         </div>
-
-        <div class="d-flex justify-content-end" id="next">
-            <a href="#/home/?pageNumber={{count}}&pageSize={{pageSize}}">»</a>
+        <div class="g-flex"></div>
+        <div class="h-pagination-right" id="next">
+            <a href="#/home/?page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
         </div>
     </div>
     {{/if}}

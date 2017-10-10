@@ -300,21 +300,36 @@ footer {
 /* Home page */
 
 .h-container {
-    display: flex;
+    display: block;
     margin-left: 87px;
-    margin-right:83px;
+    margin-right: 83px;
+    height: 796px;
 }
 
 .h-container article {
-    display: block;;
+    float: left;
     width: 231px;
     height: 360px;
     background: #ffffff;
     font-family: DroidSans;
     font-size: 13px;
     margin-right: 25px;
+    margin-bottom: 25px;
     border-top: none;
     color: #4a4a4a;
+}
+
+.h-container article:nth-of-type(2) {
+    width: 486px;
+}
+
+.h-container .p-post-category {
+    right: 0px;
+    top: 0px;
+}
+.h-container .p-post-date {
+    right: 5px;
+    top: 20px;
 }
 
 .h-container h2 {
@@ -330,6 +345,7 @@ footer {
     padding-right: 15px;
     padding-left: 15px;
 }
+
 .h-container h3 {
     font-family: LeagueGothic;
     text-transform: uppercase;
@@ -348,10 +364,12 @@ footer {
 .h-container .p-post-image-container {
     width: 100%;
     height: 185px;
+    border: 4px solid #ffffff;
 }
 
 .h-container .p-post-image {
-    border: 4px solid #ffffff;
+    box-shadow: 0 0 1px 1px grey;
+    border: none;
 }
 
 .h-dotted {
@@ -359,12 +377,43 @@ footer {
 }
 
 .h-post-content-text {
-    height: 80px;
+    height: 90px;
     white-space: pre-line;
     text-overflow: ellipsis;
     overflow: hidden;
     border-top: 1px dotted #a6a6a6; 
     padding: 16px 10px 0px 16px;
+}
+
+.h-pagination-container {
+    display: flex;
+    margin-left: 87px;
+    margin-right: 87px;
+    height: 30px;
+}
+
+.h-pagination-container img {
+    width: 26px;
+    height: 26px;
+    border: 1px transparent;
+    margin: auto;
+}
+
+.h-pagination-numbers a{
+    font-size: 36px;
+    margin-right: 18px;
+    text-shadow: 1px 1px solid #2b2a2a;
+}
+.h-pagination-numbers a:hover,
+.h-pagination-numbers a:active, 
+.h-pagination-numbers a:focus{
+    color: #dcc08e;
+}
+
+.h-pagination-numbers {
+   height:30px;
+   margin-top: 0px;
+   border: 1px transparent;
 }
 /* Post single page */
 

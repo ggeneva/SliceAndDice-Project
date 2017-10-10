@@ -20,6 +20,7 @@ SystemJS.config({
         'navigation-helper': '../scripts/helpers/navigation.js',
         'validator': '../scripts/helpers/validator.js',
         'date-helper': '../scripts/helpers/date-helper.js',
+        'post-sort': '../scripts/helpers/post-sort.js',
 
         // Controllers
         'home-controller': '../scripts/controllers/homeController.js',

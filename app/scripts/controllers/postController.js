@@ -5,6 +5,7 @@ import { validator } from 'validator';
 import { uploadImg } from 'img-upload';
 import { templateLoader } from 'template-loader';
 import { getMonthName, getDayOfCreation } from 'date-helper';
+import { postSort } from 'post-sort';
 
 class PostController {
     constructor() {
@@ -33,7 +34,7 @@ class PostController {
                 };
 
                 postModel.create(formData);
-                sammy.redirect('#/home');
+                sammy.redirect('#/home/?page=1&pageSize=11');
             });
     }
 
@@ -45,7 +46,7 @@ class PostController {
                         validator.validatePost();
                     });
             } else {
-                sammy.redirect('#/');
+                sammy.redirect('#/home/?page=1&pageSize=11');
             }
         });
     }
@@ -73,9 +74,10 @@ class PostController {
                     counter = 0;
                 }
                 templateLoader.loadTemplate('post', '#g-app-container',
-                    { post: post,
-                    counter: counter,
-                    isLogged: isLogged,
+                    {
+                        post: post,
+                        counter: counter,
+                        isLogged: isLogged,
                     });
             }).catch((err) => {
                 console.log(err);
@@ -83,14 +85,28 @@ class PostController {
     }
 
     loadCategory(sammy) {
+
+        const pageSize = sammy.params.pageSize;
+        const page = sammy.params.page;
+        console.log(pageSize);
+        console.log(page);
+
         postModel.getPosts({
             prop: 'category',
             value: sammy.params.category,
         })
             .then((posts) => {
-                console.log(sammy.params.category);
+                const countPages = Math.ceil(Object.keys(posts).length / pageSize);
+                const pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
+                const sortedPosts = postSort.sortByDate(posts);
+                const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
+
+
                 templateLoader.loadTemplate('category', '#g-app-container',
-                    { posts: posts });
+                    {
+                        posts: filteredPosts, countPages,
+                        pageNumbers, pageSize, pagination: true
+                    });
             }).catch((err) => {
                 console.log(err);
             });
