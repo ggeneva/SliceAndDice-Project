@@ -1,25 +1,27 @@
-<div class="container g-app-container ">
-    <div class="row">
+<div class="g-app-container ">
+    <div class="g-reset h-container">
         {{#each posts}}
-        <div class="col">
+        <article class="p-border">
             <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
-                <div class="single-article-image-containter">
-                    <img class="single-article-image" src="" />
-                </div>
-
-                <div class="row">
-                    {{{title}}}
-                </div>
-
-                <div class="row">
-                    {{author}}
-                </div>
-
-                <div class="row">
-                    {{{content}}}
-                </div>
-            </a>
-        </div>
+                <section class="p-post-image-container">
+                    <div class="p-post-category">
+                        {{category}}
+                    </div>
+                    <img class="p-post-image" src="{{image}}">
+                    <div class="p-post-date">
+                        <span>{{monthOfCreation}}</span>
+                        <span>{{dayOfCreation}}</span>
+                    </div>
+                </section>
+                <section class="h-post-content">
+                    <h2 class="g-reset">{{{title}}}</h2>
+                    <h3 class="g-reset">POSTED BY {{{author}}}</h3>
+                </section>
+                <section>
+                <div class="g-dotted"></div>
+                <div class="h-post-content-text">{{{content}}}</div>
+                <section>
+        </article>
         {{/each}}
     </div>
 

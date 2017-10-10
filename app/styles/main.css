@@ -297,6 +297,75 @@ footer {
     margin-right: 15%;
     margin-bottom: 2.5%;
 }
+/* Home page */
+
+.h-container {
+    display: flex;
+    margin-left: 87px;
+    margin-right:83px;
+}
+
+.h-container article {
+    display: block;;
+    width: 231px;
+    height: 360px;
+    background: #ffffff;
+    font-family: DroidSans;
+    font-size: 13px;
+    margin-right: 25px;
+    border-top: none;
+    color: #4a4a4a;
+}
+
+.h-container h2 {
+    font-family: LeagueGothic;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #9a1d0d;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+    margin-top:5px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.h-container h3 {
+    font-family: LeagueGothic;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #2c2c2c;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+
+}
+
+.h-container .p-post-image-container {
+    width: 100%;
+    height: 185px;
+}
+
+.h-container .p-post-image {
+    border: 4px solid #ffffff;
+}
+
+.h-dotted {
+    border-top: 1px dotted #969696;
+}
+
+.h-post-content-text {
+    height: 80px;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-top: 1px dotted #a6a6a6; 
+    padding: 16px 10px 0px 16px;
+}
 /* Post single page */
 
 .p-page {
