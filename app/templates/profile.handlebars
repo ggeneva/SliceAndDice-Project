@@ -1,17 +1,8 @@
 <div class="container g-app-container ">
-    <div class="row">
-        <div class="col">
-            <div class="single-article-image-containter">
-                <img class="single-article-image" src="{{user.photoURL}}" />
-            </div>
-
-            <div class="row">
-                {{{user.photoURL}}}
-            </div>
-
-            <div class="row">
-                {{user.email}}
-            </div>
-        </div>
+    <div class="p-profile">
+            <img class="single-article-image" src="{{user.photoURL}}" />
+            <div class="p-dotted"></div>
+            <div class="p-name">{{user.displayName}}</div>
+            <div class="p-email">{{user.email}}</div>
     </div>
 </div>

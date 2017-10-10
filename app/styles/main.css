@@ -857,6 +857,37 @@ footer {
     color: #7a7575;
 
 }
+
+.p-profile {
+    display: block;
+    margin: auto;
+    width: 27vw;
+    background: #ffffff;
+    font-family: LeaguGothic;
+    text-align: center;
+}
+
+.p-profile img {
+    width: 100%;
+    height: auto;
+    border: 4px solid #ffffff;
+}
+.p-profile .p-name {
+    font-size: 2vw;
+    color: #9a1d0d;
+    font-weight: 700;
+}
+.p-profile .p-email {
+    font-size: 1vw;
+    color:#2c2c2c;
+    font-weight: 700;
+}
+
+.p-dotted {
+    border-top: 1px dotted #6e6e6e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 /* Register/Login/Create Post pages*/
 .error {
     color: red;
