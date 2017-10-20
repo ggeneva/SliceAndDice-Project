@@ -36,6 +36,7 @@ class Validator {
                 username: {
                     required: true,
                     minlength: 4,
+                    maxlength: 25,
                 },
             },
             highlight: function(element) {
@@ -51,16 +52,20 @@ class Validator {
                 title: {
                     required: true,
                     minlength: 5,
+                    maxlength: 50,
                 },
                 content: {
                     required: true,
                     minlength: 20,
+                    maxlength: 40000,
                 },
-               category: {
+                category: {
                     required: true,
                 },
-                image: {
-                    // TO DO
+                tags: {
+                    required: true,
+                    maxlength: 50,
+                    minlength: 2,
                 },
             },
             highlight: function(element) {

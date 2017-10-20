@@ -2,16 +2,18 @@ class PostSort {
     sortByDate(posts) {
         const postsArray = Object.keys(posts).map((key) => posts[key]);
 
-        const sortedPosts = postsArray.sort(function(a, b) {
-            if (a.monthOfCreation > b.monthOfCreation) {
-                return -1;
-            } else if (a.monthOfCreation < b.monthOfCreation) {
-                return 1;
-            }
 
-            if (a.dayOfCreation > b.dayOfCreaton) {
+        for (const comments in postsArray) {
+            if (postsArray.hasOwnProperty(comments)) {
+                const element = postsArray[comments].dateOfCreation;
+                console.log(postsArray[comments]);
+                console.log(element);
+            }
+        }
+        const sortedPosts = postsArray.sort(function(a, b) {
+            if (a.dateOfCreation > b.dateOfCreation) {
                 return -1;
-            } else if (a.dayOfCreation < b.dayOfCreation) {
+            } else if (a.dateOfCreation < b.dateOfCreation) {
                 return 1;
             }
 

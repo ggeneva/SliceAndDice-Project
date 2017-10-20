@@ -69,6 +69,8 @@ class PostController {
             .then((post) => {
                 let counter = 0;
                 if (post.hasOwnProperty('comments')) {
+                    console.log('Tooovaaa tuk:');
+                    console.log(post.comments);
                     counter = Object.keys(post.comments).length;
                 } else {
                     counter = 0;
@@ -108,7 +110,8 @@ class PostController {
                         pageNumbers, pageSize, pagination: true,
                         category: sammy.params.category,
                     });
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 console.log(err);
             });
     }

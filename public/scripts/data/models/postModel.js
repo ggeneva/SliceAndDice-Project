@@ -5,7 +5,6 @@ class PostModel {
         this.dataBase = database;
     }
     create(data) {
-        console.log(data);
         this.dataBase.createPost(data);
     }
     isUserLoggedIn() {
