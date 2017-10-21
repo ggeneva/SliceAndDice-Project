@@ -1,6 +1,6 @@
 <div class="container g-app-container ">
     <div class="row r-page">
-        <form action="#/create-post" id="post-form" method="post">
+        <form action="#/create-post" id="post-form" method="post" onsubmit="$('#c-loading').show();">
             <div class="form-group">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -34,6 +34,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="PUBLISH POST" class="btn g-btn btn-submit-form">
+                <div id="c-loading" style="display:none;"><img src="../images/Reload.gif" alt="" />Submitting...</div>
             </div>
         </form>
     </div>

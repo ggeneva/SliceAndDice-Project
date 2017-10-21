@@ -1,6 +1,6 @@
 <div class="container g-app-container ">
     <div class="row r-page">
-        <form action="#/register" id="register-form" method="post">
+        <form action="#/register" id="register-form" method="post" onsubmit="$('#r-loading').show();">
             <div class="form-group">
                 <span class="label label-danger"></span>
             </div>
@@ -30,14 +30,15 @@
 
             <div class="form-group">
                 <label for="avatar">Profile picture</label>
-                <input type="file" accept="image/*" class="form-control" name="avatar" id="avatar"
-                 title="Please select your profile photo." required>
+                <input type="file" accept="image/*" class="form-control" name="avatar" id="avatar" title="Please select your profile photo."
+                    required>
             </div>
-            <div class="form-group ustify-content-start">
-                <input type="submit" class="btn btn-submit-form g-btn" value="REGISTER">
+            <div class="form-group">
+                <input type="submit" class="btn btn-submit-form g-btn" value="REGISTER" >
+                <div id="r-loading" style="display:none;"><img src="../images/Reload.gif" alt="" />Submitting...</div>
             </div>
+        </form>
     </div>
-    </form>
 </div>
 </div>
 <script>
@@ -50,4 +51,5 @@
             }
         });
     });
+
 </script>

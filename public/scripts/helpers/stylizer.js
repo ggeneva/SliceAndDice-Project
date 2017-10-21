@@ -23,6 +23,7 @@ function menuSwitch() {
         $('.g-logo-box').removeClass('hidden');
     }
 }
+
 function getForm() {
     console.log('please');
     event.stopPropagation();
@@ -34,6 +35,7 @@ function getForm() {
         (form).addClass('hidden');
     }
 }
+
 $(document).on('click', '.p-get-subcomments-form', (ev) => {
     const $this = $(ev.target);
     const $form = $this.next();
@@ -42,5 +44,12 @@ $(document).on('click', '.p-get-subcomments-form', (ev) => {
     } else {
         ($form).addClass('hidden');
     }
-
 });
+
+$(window).on('load', function() {
+    // Animate loader off screen
+    setTimeout(function() {
+        $('.se-pre-con').fadeOut('slow');
+     }, 3000);
+});
+

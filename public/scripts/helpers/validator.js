@@ -13,6 +13,7 @@ class Validator {
                 },
             },
             highlight: function(element) {
+                $('#l-loading').css('display', 'none');
                 $(element).closest('.control-group')
                           .removeClass('success').addClass('error');
             },
@@ -40,6 +41,7 @@ class Validator {
                 },
             },
             highlight: function(element) {
+                $('#r-loading').css('display', 'none');
                 $(element).closest('.control-group')
                           .removeClass('success').addClass('error');
             },
@@ -69,6 +71,7 @@ class Validator {
                 },
             },
             highlight: function(element) {
+                $('#c-loading').css('display', 'none');
                 $(element).closest('.control-group')
                           .removeClass('success').addClass('error');
             },
