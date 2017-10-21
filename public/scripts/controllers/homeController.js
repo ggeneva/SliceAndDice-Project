@@ -20,6 +20,7 @@ class HomeController {
                 const sortedPosts = postSort.sortByDate(posts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
 
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('home', '#g-app-container',
                     { posts: filteredPosts, countPages,
                         pageNumbers, pageSize, pagination: true });

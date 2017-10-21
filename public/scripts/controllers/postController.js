@@ -41,6 +41,7 @@ class PostController {
     loadCreatePostPage(sammy) {
         postModel.isUserLoggedIn().then((isLoggedIn) => {
             if (isLoggedIn) {
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('create-post', '#g-app-container')
                     .then(() => {
                         validator.validatePost();
@@ -75,6 +76,7 @@ class PostController {
                 } else {
                     counter = 0;
                 }
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('post', '#g-app-container',
                     {
                         post: post,
@@ -87,7 +89,6 @@ class PostController {
     }
 
     loadCategory(sammy) {
-
         const pageSize = sammy.params.pageSize;
         const page = sammy.params.page;
         console.log(pageSize);
@@ -103,7 +104,7 @@ class PostController {
                 const sortedPosts = postSort.sortByDate(posts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
 
-
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('category', '#g-app-container',
                     {
                         posts: filteredPosts, countPages,

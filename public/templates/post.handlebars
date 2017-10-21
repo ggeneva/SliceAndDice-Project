@@ -32,10 +32,11 @@
                     <section class="p-post-share">
                         <h3>SHARE THIS</h3>
                         <div class="p-post-share-img">
-                        <span><a><img src="../images/twitter-icon.png"></a></span>
-                        <span><a><img src="../images/facebook-icon.png"></a></span>
-                        <span><a><img src="../images/middle-icon.png"></a></span>
-                        <span><a><img src="../images/reddit-icon.png"></a></span>
+                            <span><a onclick="window.open('http://twitter.com/intent/tweet?status={{{post.title}}}+https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/twitter-icon.png"></a></span>
+                            <span><a onclick="window.open('https://www.facebook.com/sharer.php?caption={{{post.title}}}&description={{{post.content}}}&u=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}&picture={{post.image}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/facebook-icon.png"></a></span>
+                            <span><a onclick="window.open('https://del.icio.us//submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/delicio-icon.png"></a></span>
+                            <span><a onclick="window.open('http://www.digg.com/submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/digg-icon.png"></a></span>
+                            <span><a onclick="window.open('http://reddit.com/submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}&amp;title={{{post.title}}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img class="p-post-share-last" src="../images/reddit-icon.png"></a></span>
                         </div>
                     </section>
                 </aside>

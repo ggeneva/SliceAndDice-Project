@@ -94,7 +94,7 @@ ul li a:hover, ul li a:active, ul li a:focus{
 }
 
 .g-app-container {
-    margin-bottom: 0px;
+    margin-bottom: 800px;
 }
 .hidden {
     display: none !important;
@@ -560,8 +560,8 @@ footer {
 }
 .p-post-share img{
     float: left;
-    width: 27px;
-    height: 27px;
+    width: 25px;
+    height: 25px;
     margin-right: 12px;
     border: transparent 1px;
     border-radius: 5px;
@@ -569,6 +569,10 @@ footer {
 }
 .p-post-share-img {
     margin-left: 3px;
+}
+
+.p-post-share .p-post-share-last {
+    margin-right: 0px;
 }
 
 .p-border {

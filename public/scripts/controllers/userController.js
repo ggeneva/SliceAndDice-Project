@@ -82,6 +82,7 @@ class UserController {
     loadRegisterPage(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
             if (!isLoggedIn) {
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('register', '#g-app-container')
                     .then(() => {
                         validator.validateRegister();
@@ -95,6 +96,7 @@ class UserController {
     loadLoginPage(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
             if (!isLoggedIn) {
+                templateLoader.loadTemplate('footer', '#g-app-footer');
                 templateLoader.loadTemplate('login', '#g-app-container')
                     .then(() => {
                         validator.validateLogin();
@@ -106,9 +108,22 @@ class UserController {
     }
 
     loadProfile(sammy) {
+        templateLoader.loadTemplate('footer', '#g-app-footer');
         const user = userModel.getCurrentUser();
         templateLoader.loadTemplate('profile', '#g-app-container',
             { user: user });
+        /*
+        templateLoader.loadTemplate('footer', '#g-app-footer');
+        async function getCurrentUser() {
+            const currentUser = await userModel.getCurrentUser();
+            return currentUser;
+          }
+        getCurrentUser().then((user) => {
+            console.log(user);
+            templateLoader.loadTemplate('profile', '#g-app-container',
+                { user: user });
+        });
+        */
     }
     createComment(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {

@@ -31,16 +31,17 @@
             {{#if pagination}}
             <div class="h-pagination-container">
                 <div class="h-pagination-left" id="previous">
-                    <a href="#/home/?category={{category}}&page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
+                    <a href="#/posts/?category={{category}}&page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
                 </div>
                 <div class="g-flex"></div>
                 <div class="h-pagination-numbers">
                     {{#each pageNumbers}}
-                    <a href="#/home/?category={{../category}}&page={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
+                    <a href="#/posts/?category={{../category}}&page={{this}}&pageSize={{../pageSize}}">{{this}}</a>
+                    {{/each}}
                 </div>
                 <div class="g-flex"></div>
                 <div class="h-pagination-right" id="next">
-                    <a href="#/home/?category={{category}}&page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
+                    <a href="#/posts/?category={{category}}&page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
                 </div>
             </div>
             {{/if}}
