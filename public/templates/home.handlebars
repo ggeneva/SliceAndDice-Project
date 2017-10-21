@@ -1,5 +1,5 @@
-<div class="g-app-container g-app-container-home ">
-    <div class="g-reset h-container">
+<div class="g-app-container-home ">
+    <div class="g-reset h-container g-clearfix">
         {{#each posts}}
         <article class="p-border">
             <a class="g-reset" href="#/posts/{{authorUid}}{{dateOfCreation}}">
@@ -18,15 +18,15 @@
                     <h3 class="g-reset">POSTED BY {{{author}}}</h3>
                 </section>
                 <section>
-                <div class="g-dotted"></div>
-                <div class="h-post-content-text">{{{content}}}</div>
+                    <div class="g-dotted"></div>
+                    <div class="h-post-content-text">{{{content}}}</div>
                 </section>
             </a>
         </article>
         {{/each}}
-    </div>
 
-    {{#if pagination}}
+    </div>
+    <br> {{#if pagination}}
     <div class="h-pagination-container">
         <div class="h-pagination-left" id="previous">
             <a href="#/home/?page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>

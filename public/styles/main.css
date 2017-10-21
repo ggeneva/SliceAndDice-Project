@@ -12,13 +12,23 @@
     margin: 0;
     padding: 0;
 }
+/* CLEAR-FIX */
+.g-clearfix:after { 
+    visibility: hidden;
+    display: block;
+    font-size: 0; 
+    content: " ";
+    clear: both;
+    height: 0;
+    overflow: none;
+}
+
 
 body {
     margin:0;
     padding:0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
     background: rgb(27,28,28); /* Old browsers */
     background: -moz-linear-gradient(left, rgba(27,28,28,1) 0%, rgba(30,30,28,1) 3%, rgba(31,31,31,1) 3%, rgba(37,38,39,1) 11%, rgba(40,39,39,1) 11%, rgba(41,41,41,1) 14%, rgba(44,44,44,1) 15%, rgba(43,43,42,1) 15%, rgba(45,44,45,1) 16%, rgba(43,46,45,1) 16%, rgba(46,45,44,1) 17%, rgba(46,46,46,1) 17%, rgba(49,48,47,1) 20%, rgba(47,50,49,1) 21%, rgba(48,47,48,1) 21%, rgba(50,50,50,1) 22%, rgba(50,50,50,1) 80%, rgba(28,29,29,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, rgba(27,28,28,1) 0%,rgba(30,30,28,1) 3%,rgba(31,31,31,1) 3%,rgba(37,38,39,1) 11%,rgba(40,39,39,1) 11%,rgba(41,41,41,1) 14%,rgba(44,44,44,1) 15%,rgba(43,43,42,1) 15%,rgba(45,44,45,1) 16%,rgba(43,46,45,1) 16%,rgba(46,45,44,1) 17%,rgba(46,46,46,1) 17%,rgba(49,48,47,1) 20%,rgba(47,50,49,1) 21%,rgba(48,47,48,1) 21%,rgba(50,50,50,1) 22%,rgba(50,50,50,1) 80%,rgba(28,29,29,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -93,8 +103,8 @@ ul li a:hover, ul li a:active, ul li a:focus{
     flex: 1 1 auto;
 }
 
-.g-app-container {
-    margin-bottom: 800px;
+#g-app-container {
+    margin-bottom:50px;
 }
 .hidden {
     display: none !important;
@@ -119,6 +129,11 @@ ul li a:hover, ul li a:active, ul li a:focus{
     margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 2px;
+}
+
+.g-app-container-home {
+    display: block;
+    overflow: none;
 }
 .bar1, .bar2, .bar3 {
     width: 35px;
@@ -251,7 +266,7 @@ ul li a:hover, ul li a:active, ul li a:focus{
 /* Footer */
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: auto;
@@ -312,11 +327,12 @@ footer {
 }
 /* Home page */
 
+
 .h-container {
     display: block;
     margin-left: 62px;
     margin-right: 10px;
-    height: 796px;
+    overflow: none;
 }
 
 .h-container article {
@@ -953,7 +969,7 @@ footer {
 /* Responsive for desktop more than 1800px */
 @media (min-width: 1800px) {
 
-    .g-app-container, .container {
+    #g-app-container, .container {
         width: 100%;
     }
 
@@ -1036,6 +1052,33 @@ footer {
     .dropdown-toggle:active {
         box-shadow: 0vw 0vw 0vw 0.7vw #222222;
     }
+
+    .h-container article {
+        width: 13.75vw;
+        height: 21.43vw;
+        font-size: 0.77vw;
+        margin-left: 1.5vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .h-container article:hover {
+        width: 27.50vw;
+    }
+
+    .h-container h2 {
+        font-size: 1.8vw;
+    }
+    
+    .h-container h3 {
+        font-size: 1.07vw;
+    }
+    
+    .h-container .p-post-image-container {
+        height: 11vw;
+    }
+    .h-post-content-text {
+        height: 4.9vw;
+    }
 }
 
 /* Responsive for desktop 1600px */
@@ -1055,33 +1098,49 @@ footer {
     .c-page {
         display: block;;
     }
-    
+    .h-container {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 1450px) {
     .g-footer-container {
-        margin-top: 40px;
+        display: block;
+        margin: auto;
+        margin-top: 30px;
         margin-left: 50px;
-        margin-right: 10px;
     }
 
     .g-footer-content {
         min-height: 250px;
         min-width: 280px;
         max-width: 280px;
-        margin-left: 50px;
+        margin-left: 10px;
     }
 }
 
 /* Responsive for laptops 1200px */
 @media (max-width: 1200px) {
+    .g-footer-container {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .g-footer-content {
+        min-height: 250px;
+        min-width: 280px;
+        max-width: 280px;
+        margin: auto;
+    }
+
     footer {
         position: relative;
     }
 
-    .g-app-container {
-        margin-bottom: 50px;
-    }
 
     #g-myNavbar ul li {
         font-size: 1.8vw;
@@ -1102,7 +1161,38 @@ footer {
 
 /* Custom Resizing for responsive design ---->*/
 
+@media (max-width: 810px) {
+    .h-container article:hover {
+        width: 231px;
+    }
+}
 @media (max-width: 768px) {
+    .h-container article {
+        float: none;
+        margin: 0 auto;
+        margin-top: 60px;
+        width: 100%;
+        height: auto;
+    }
+    .h-container article:hover {
+        width:100%;
+    }
+    .h-container .p-post-image-container {
+        height: auto;
+    }
+    .g-footer-container {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .g-footer-content {
+        display: block;
+        min-height: 250px;
+        min-width: 280px;
+        max-width: 280px;
+        margin: auto;
+    }
+
     #g-myNavbar ul li {
         font-size: 24px;
         margin-right: 20px;
@@ -1117,7 +1207,7 @@ footer {
 
 /* Responsive for phones - orientation landscape 720px */
 @media (max-width: 720px) {
-    .g-app-container, .container {
+    #g-app-container, .container {
         width: 100%;
     }
     .r-page {
@@ -1142,6 +1232,15 @@ footer {
 
 /* Responsive for phones 360px */
 @media (max-width: 360px) {
+
+    .g-footer-content {
+        display: block;
+        min-height: 100px;
+        min-width: 100px;
+        max-width: 280px;
+        margin: auto;
+    }
+
     .r-page {
         width: 98%;
         font-size: 6vw;
@@ -1149,6 +1248,17 @@ footer {
     .g-btn {
         font-size: 7vw;
         width: 100%;
+    }
+    .h-pagination-container {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        width: 40%;
+    }
+    .h-pagination-numbers {
+        height: auto;
+        margin: 0 auto;
+        display: block;
     }
     
 }
