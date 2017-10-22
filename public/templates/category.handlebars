@@ -1,7 +1,7 @@
-<div class="g-app-container g-app-container-home ">
+<div class="g-app-container g-app-container-home">
     <div class="c-page">
         <div class="c-posts">
-            <div class="g-reset h-container">
+            <div class="g-reset h-container g-clearfix">
                 <p class="c-selected-category">Home &#8811; <b>{{{category}}}</b></p>
                 {{#each posts}}
                 <article class="p-border">
@@ -27,26 +27,8 @@
                 </article>
                 {{/each}}
             </div>
-
-            {{#if pagination}}
-            <div class="h-pagination-container">
-                <div class="h-pagination-left" id="previous">
-                    <a href="#/posts/?category={{category}}&page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
-                </div>
-                <div class="g-flex"></div>
-                <div class="h-pagination-numbers">
-                    {{#each pageNumbers}}
-                    <a href="#/posts/?category={{../category}}&page={{this}}&pageSize={{../pageSize}}">{{this}}</a>
-                    {{/each}}
-                </div>
-                <div class="g-flex"></div>
-                <div class="h-pagination-right" id="next">
-                    <a href="#/posts/?category={{category}}&page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
-                </div>
-            </div>
-            {{/if}}
         </div>
-        <div class="c-recent">
+        <div class="c-recent g-clearfix">
             <div class="p-custom-wd p-border">
                 <h3>RELATED POSTS</h3>
                 <ul>
@@ -71,4 +53,20 @@
             </div>
         </div>
     </div>
+    {{#if pagination}}
+    <div class="h-pagination-container">
+        <div class="h-pagination-left" id="previous">
+            <a href="#/posts/?category={{category}}&page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
+        </div>
+        <div class="g-flex"></div>
+        <div class="h-pagination-numbers">
+            {{#each pageNumbers}}
+            <a href="#/posts/?category={{../category}}&page={{this}}&pageSize={{../pageSize}}">{{this}}</a> {{/each}}
+        </div>
+        <div class="g-flex"></div>
+        <div class="h-pagination-right" id="next">
+            <a href="#/posts/?category={{category}}&page={{pageNumbers.length}}&pageSize={{pageSize}}"><img src="../images/pagination-right.png"></a>
+        </div>
+    </div>
+    {{/if}}
 </div>

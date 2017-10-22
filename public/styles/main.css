@@ -850,7 +850,6 @@ footer {
     border-top: none;
     text-overflow: clip;
     overflow: hidden;
-    
 }
 .p-custom-wd h3 {
     background: #e7e7e7;
@@ -877,6 +876,7 @@ footer {
     font-size: 13px;
     font-family: DroidSans;
     color: #8e8e8e;
+    margin-left: 25px;
 }
 
 .c-page {
@@ -885,14 +885,16 @@ footer {
 
 .c-posts {
     display: block;
-    width: 1256px;
-    margin-left: 90px;
+    width: 1306px;
+    margin-left: 60px;
 }
 
 .c-recent {
     display: block;
     width: 234px;
     margin-top:12px;
+    margin-bottom: 210px;
+    margin-right: 40px;
 }
 
 .c-posts .h-container, 
@@ -1062,22 +1064,53 @@ footer {
     }
 
     .h-container article:hover {
-        width: 27.50vw;
+        width: 29vw;
     }
 
     .h-container h2 {
         font-size: 1.8vw;
     }
-    
+
     .h-container h3 {
         font-size: 1.07vw;
     }
-    
+
     .h-container .p-post-image-container {
         height: 11vw;
     }
+
     .h-post-content-text {
         height: 4.9vw;
+    }
+
+    .c-posts {
+        width: 77.50vw;
+    }
+
+    .p-custom-wd {
+        height:16.55vw;
+    }
+
+    .p-custom-wd img {
+        width: 0.6vw;
+        height: 0.6vw;
+    }
+
+    .p-custom-wd ul {
+        font-size: 0.83vw;
+    }
+
+    .p-custom-wd-text {
+        font-size: 0.77vw;
+    }
+
+    .c-recent {
+        width: 13.92vw;
+    }
+
+    .p-tabs ul li,
+    .p-custom-wd h3 {
+        font-size: 1.78vw;
     }
 }
 
@@ -1090,19 +1123,23 @@ footer {
         margin-left: 50px;
         margin-bottom: 20px;
     }
+
     .g-footer-container {
         margin-top: 40px;
         margin-left: 50px;
         margin-right: 10px;
     }
-    .c-page {
-        display: block;;
+
+    .c-posts {
+        width: 77.50vw;
     }
+
     .h-container {
         display: block;
         width: 95%;
         margin: 0 auto;
     }
+
 }
 
 @media (max-width: 1450px) {
@@ -1162,11 +1199,13 @@ footer {
 /* Custom Resizing for responsive design ---->*/
 
 @media (max-width: 810px) {
+
     .h-container article:hover {
         width: 231px;
     }
 }
 @media (max-width: 768px) {
+
     .h-container article {
         float: none;
         margin: 0 auto;
@@ -1174,12 +1213,15 @@ footer {
         width: 100%;
         height: auto;
     }
+
     .h-container article:hover {
         width:100%;
     }
+
     .h-container .p-post-image-container {
         height: auto;
     }
+
     .g-footer-container {
         display: block;
         margin-top: 30px;
@@ -1197,12 +1239,54 @@ footer {
         font-size: 24px;
         margin-right: 20px;
     }
+
     .dropdown-menu > li > a {
         font-size: 22px;
     }
+
     .form-control {
         font-size: 13px;
     }
+
+    .c-page {
+        display: block;
+    }
+
+    .c-posts {
+        width: 80%;
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+    .c-recent {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .p-custom-wd {
+        width: 100%;
+        margin: auto;
+        height: auto;
+        margin-top: 16px;
+    }
+    .p-custom-wd ul {
+        text-align: center;
+    }
+
+    .c-recent .p-custom-wd {
+        margin-top: 60px;
+    }
+
+    .c-page {
+        display: block;
+    }
+    .c-posts .h-container {
+        width: 100%;
+    }
+
+
+
 }
 
 /* Responsive for phones - orientation landscape 720px */
