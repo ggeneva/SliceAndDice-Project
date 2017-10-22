@@ -937,6 +937,8 @@ footer {
     background: #ffffff;
     font-family: LeaguGothic;
     text-align: center;
+    margin-top: 5vw;
+    margin-bottom: 12vw;
 }
 
 .p-profile img {
@@ -944,11 +946,13 @@ footer {
     height: auto;
     border: 4px solid #ffffff;
 }
+
 .p-profile .p-name {
     font-size: 2vw;
     color: #9a1d0d;
     font-weight: 700;
 }
+
 .p-profile .p-email {
     font-size: 1vw;
     color:#2c2c2c;
@@ -960,6 +964,7 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 /* Register/Login/Create Post pages*/
 .error {
     color: red;
@@ -971,10 +976,14 @@ footer {
     width: 70%;
     font-size: 2vw;
     font-weight: normal;
+    margin-top: 5vw;
+    margin-bottom: 12vw;
 }
+
 .r-page label {
     font-weight: normal;
 }
+
 .r-page ::-webkit-input-placeholder {
     font-size: 1.5vw!important;
 }
@@ -982,13 +991,25 @@ footer {
 .r-page ::-moz-placeholder { /* Firefox 18- */
        font-size: 1.5vw!important;
 }
+
 .r-page ::-moz-placeholder {  /* Firefox 19+ */
        font-size:1.5vw!important;
 }
+
 .form-control {
     font-size: 18px;
     font-family: DroidSans;
 }
+
+#login-form {
+    margin-bottom: 5vw;
+}
+
+#l-loading img {
+    margin-top: 0.5vw;
+    width: 6vw;
+}
+
 /* Responsive for desktop more than 1800px */
 @media (min-width: 1800px) {
 
@@ -1076,6 +1097,10 @@ footer {
         box-shadow: 0vw 0vw 0vw 0.7vw #222222;
     }
 
+    #l-loading img {
+        width: 4vw;
+    }
+
     .h-container article {
         width: 13.75vw;
         height: 21.43vw;
@@ -1128,6 +1153,11 @@ footer {
 
     .c-recent {
         width: 13.92vw;
+    }
+
+    .c-selected-category {
+        font-size: 0.77vw;
+        margin-left: 1.48vw;
     }
 
     .p-tabs ul li,
@@ -1238,7 +1268,8 @@ footer {
         height: 4.28vw;
     }
 
-    .p-post-date {
+    .p-post-date,
+    .h-container .p-post-date {
         font-size: 2.25vw;
         top: 1.19vw;
         right: 0.59vw;
@@ -1291,6 +1322,10 @@ footer {
         margin-bottom: 2.20vw;
     }
 
+    .form-control {
+        font-size: 1.07vw;
+    }
+
 }
 
 @media (max-width: 1662px) {
@@ -1324,6 +1359,20 @@ footer {
         display: block;
         width: 95%;
         margin: 0 auto;
+    }
+
+    .h-pagination-numbers a {
+        font-size: 2.5vw;
+        margin-right: 1.07vw;
+    }
+
+    .h-pagination-numbers {
+        height: auto;
+    }
+
+    .h-pagination-container img {
+        width: 1.54vw;
+        height: 1.54vw;
     }
 
     .p-post-content {
@@ -1475,12 +1524,14 @@ footer {
         height: auto;
         margin: auto;
         margin-top: 25px;
-        text-align: center;
     }
 
     .p-post-comment-content-container-small p:nth-child(1),
     .p-custom-wd ul li{
-        width: 85vw;
+        width: 25vw;
+        margin: auto;
+        display: block;
+
     }
 }
 
@@ -1575,7 +1626,8 @@ footer {
     }
 
     .p-custom-wd ul {
-        text-align: center;
+        width: 100%;
+        margin: auto;
     }
 
     .c-recent .p-custom-wd {
