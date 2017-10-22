@@ -32,11 +32,11 @@
                     <section class="p-post-share">
                         <h3>SHARE THIS</h3>
                         <div class="p-post-share-img">
-                            <span><a onclick="window.open('http://twitter.com/intent/tweet?status={{{post.title}}}+https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/twitter-icon.png"></a></span>
-                            <span><a onclick="window.open('https://www.facebook.com/sharer.php?caption={{{post.title}}}&description={{{post.content}}}&u=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}&picture={{post.image}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/facebook-icon.png"></a></span>
+                            <span><a onclick="window.open('http://twitter.com/intent/tweet?status=FromTheStyle:+https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/twitter-icon.png"></a></span>
+                            <span><a onclick="window.open('https://www.facebook.com/sharer.php?u=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/facebook-icon.png"></a></span>
                             <span><a onclick="window.open('https://del.icio.us//submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/delicio-icon.png"></a></span>
                             <span><a onclick="window.open('http://www.digg.com/submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img src="../images/digg-icon.png"></a></span>
-                            <span><a onclick="window.open('http://reddit.com/submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}&amp;title={{{post.title}}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img class="p-post-share-last" src="../images/reddit-icon.png"></a></span>
+                            <span><a onclick="window.open('http://reddit.com/submit?url=https%3A%2F%2Fsliceanddiceproject-89fec.firebaseapp.com%2F%23%2Fposts%2F{{post.authorUid}}{{post.dateOfCreation}}','popup','width=500,height=500,scrollbars=no,resizable=no'); return false;"><img class="p-post-share-last" src="../images/reddit-icon.png"></a></span>
                         </div>
                     </section>
                 </aside>
@@ -91,8 +91,10 @@
                                     </div>
                                     <div class="p-post-comment-content-container">
                                         <h3>{{this.authorName}}</h3>
-                                        <div class="p-post-comment-content">
-                                            {{{this.content}}}
+                                        <div class="p-post-sub-comment-content">
+                                            <div class="p-post-comment-content">
+                                                {{{this.content}}}
+                                            </div>
                                         </div>
                                         <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
                                             title="You need registration or login for comment:" disabled {{/if}}></input>
@@ -166,7 +168,7 @@
                                 </div>
                             </div>
                             <div class="p-post-comment-content-container-small">
-                                <p>Fusce espirito degfe hje</p>
+                                <p>Fusce espirito degfe hje usce espirito degfe hjusce espirito degfe hjusce esp</p>
                                 <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
                             </div>
                         </div>
@@ -261,7 +263,7 @@
                 <div class="p-custom-wd p-border">
                     <h3>RELATED POSTS</h3>
                     <ul>
-                        <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
+                        <li><a><img src="../images/li-icon.png">Say hi to thusce espirito  degfe hjusceito fe hje world</a></li>
                         <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
                         <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
                         <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
@@ -270,16 +272,12 @@
                     </ul>
                 </div>
                 <div class="p-custom-wd p-border">
-                    <h3>RELATED POSTS</h3>
+                    <h3>FROM THE STYLE TEAM</h3>
                     <p class="p-custom-wd-text">
-                        Fusce suscipit sapien sit amet sapien placerat ultrices. Vivamus sed massa ac metus gravida dignissim egestas posuere lorem.
-                        Sed ipsum urna, facilisis quis eleifend ut, sodales sed lectus. Integer felis eu ipsum malesuada
-                        luctus. Sed pharetra eleifend ante vitae fermentum. Praesent fermentum volutpat porta. Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. Ut dignissim, nibh quis ultricies laoreet, libero justo
-                        suscipit risus, sed sollicitudin odio erat at purus. Quisque molestie venenatis turpis eu adipiscing.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
-                        ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse semper aliquet
-                        odio, id blandit tortor porttitor pulvinar.
+                        Hello, there! We are happy to see you here, again! Enjoy the news, post what you want and share it to the World :)
+                        This is a welcome to your blog-news world, whether the goal is to nurture leads, build an audience, engage existing customers, or
+                        promote sales.
+                        This is a web SPA blog applicaton with all sorts of posts. The project is sliced and diced from a given psd file provided by Telerik Academy.
                     </p>
                 </div>
             </div>
