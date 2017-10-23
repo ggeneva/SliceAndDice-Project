@@ -41,10 +41,23 @@ class PostController {
     loadCreatePostPage(sammy) {
         postModel.isUserLoggedIn().then((isLoggedIn) => {
             if (isLoggedIn) {
-                templateLoader.loadTemplate('footer', '#g-app-footer');
-                templateLoader.loadTemplate('create-post', '#g-app-container')
-                    .then(() => {
-                        validator.validatePost();
+                postModel.getAllPosts()
+                    .then((posts) => {
+                        const sortedPosts = postSort.sortByDate(posts);
+                        const recentPosts = sortedPosts.slice(0, 6);
+                        const randomPosts = postSort.sortRandom(posts, 6);
+
+                        templateLoader.loadTemplate('footer', '#g-app-footer',
+                            {
+                                recentPosts: recentPosts,
+                                randomPosts: randomPosts,
+                            });
+                        templateLoader.loadTemplate('create-post', '#g-app-container')
+                            .then(() => {
+                                validator.validatePost();
+                            });
+                    }).catch((err) => {
+                        console.log(err);
                     });
             } else {
                 sammy.redirect('#/home/?page=1&pageSize=11');
@@ -155,10 +168,10 @@ class PostController {
                 const randomPosts = postSort.sortRandom(allPosts, 6);
 
                 templateLoader.loadTemplate('footer', '#g-app-footer',
-                        {
-                            recentPosts: recentPosts,
-                            randomPosts: randomPosts,
-                        });
+                    {
+                        recentPosts: recentPosts,
+                        randomPosts: randomPosts,
+                    });
                 templateLoader.loadTemplate('category', '#g-app-container',
                     {
                         posts: filteredPosts,

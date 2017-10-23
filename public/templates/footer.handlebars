@@ -1,0 +1,71 @@
+<div class="g-reset container-fluid g-footer-container">
+    <div class="g-reset g-footer-content">
+        <div class="g-footer-header">RECENT POSTS</div>
+        <ul>
+            {{#if recentPosts}}
+                {{#each recentPosts}}
+                <li>
+                    <a href="#/posts/{{authorUid}}{{dateOfCreation}}"><div id="g-sub-li-nav-pic"></div>{{{title}}}</a>
+                </li>
+                {{/each}}
+            {{/if}}
+            {{#unless recentPosts}}
+            <li>Oups... There is no recent posts!</li>
+            {{/unless}}
+        </ul>
+    </div>
+    <div class="g-reset g-footer-content">
+        <div class="g-footer-header">FROM THE STYLE TEAM</div>
+        <div> Hello, there! We are happy to see you here, again! Enjoy the news, post what you want and share it to the World :)
+            This is a welcome to your blog-news world, whether the goal is to nurture leads, build an audience, engage existing
+            customers, or promote sales. This is a web SPA blog applicaton with all sorts of posts. The project is sliced
+            and diced from a given psd file provided by Telerik Academy.
+        </div>
+    </div>
+    <div class="g-reset g-footer-content">
+        <div class="g-footer-header">RANDOM POSTS</div>
+        <ul>
+            {{#if randomPosts}}
+                {{#each randomPosts}}
+                <li>
+                    <a href="#/posts/{{authorUid}}{{dateOfCreation}}"><div id="g-sub-li-nav-pic"></div>{{{title}}}</a>
+                </li>
+                {{/each}}
+            {{/if}}
+            {{#unless randomPosts}}
+            <li>Oups... There is no recent posts!</li>
+            {{/unless}}
+        </ul>
+    </div>
+    <div class=" g-reset g-footer-content">
+        <div class="g-footer-header">RECENT COMMENTS</div>
+        <ul>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Fusce suscipit sapien sit amet</a>
+            </li>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Sapien placerat ultrices vivamus sed</a>
+            </li>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Massa ac metus gravida dignissim eges</a>
+            </li>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Posuere lorem sed ipsum urna facilisis</a>
+            </li>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Quis eleifend ut sodales sed lectus</a>
+            </li>
+            <li>
+                <a>
+                    <div id="g-sub-li-nav-pic"></div>Integer felis eu ipsum malesuada luctus</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <p class="g-footer-credits"> Telerik Academy <b>Project</b> | Made by <b>Gizdava</b>
+</div>

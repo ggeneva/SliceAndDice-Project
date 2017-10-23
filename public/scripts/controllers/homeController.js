@@ -13,7 +13,7 @@ class HomeController {
 
         postModel.getAllPosts()
             .then((posts) => {
-                const countPages = Math.ceil(Object.keys(posts).length/pageSize);
+                const countPages = Math.ceil(Object.keys(posts).length / pageSize);
                 const pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
                 const sortedPosts = postSort.sortByDate(posts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);

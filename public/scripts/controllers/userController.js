@@ -7,6 +7,8 @@ import { validator } from 'validator';
 import { templateLoader } from 'template-loader';
 import { getMonthName, getDayOfCreation } from 'date-helper';
 import { commentModel } from 'comment-model';
+import { postModel } from 'post-model';
+import { postSort } from 'post-sort';
 
 class UserController {
     constructor() {
@@ -82,10 +84,23 @@ class UserController {
     loadRegisterPage(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
             if (!isLoggedIn) {
-                templateLoader.loadTemplate('footer', '#g-app-footer');
-                templateLoader.loadTemplate('register', '#g-app-container')
-                    .then(() => {
-                        validator.validateRegister();
+                postModel.getAllPosts()
+                    .then((posts) => {
+                        const sortedPosts = postSort.sortByDate(posts);
+                        const recentPosts = sortedPosts.slice(0, 6);
+                        const randomPosts = postSort.sortRandom(posts, 6);
+
+                        templateLoader.loadTemplate('footer', '#g-app-footer',
+                            {
+                                recentPosts: recentPosts,
+                                randomPosts: randomPosts,
+                            });
+                        templateLoader.loadTemplate('register', '#g-app-container')
+                            .then(() => {
+                                validator.validateRegister();
+                            });
+                    }).catch((err) => {
+                        console.log(err);
                     });
             } else {
                 sammy.redirect('#/');
@@ -96,10 +111,23 @@ class UserController {
     loadLoginPage(sammy) {
         userModel.isUserLoggedIn().then((isLoggedIn) => {
             if (!isLoggedIn) {
-                templateLoader.loadTemplate('footer', '#g-app-footer');
-                templateLoader.loadTemplate('login', '#g-app-container')
-                    .then(() => {
-                        validator.validateLogin();
+                postModel.getAllPosts()
+                    .then((posts) => {
+                        const sortedPosts = postSort.sortByDate(posts);
+                        const recentPosts = sortedPosts.slice(0, 6);
+                        const randomPosts = postSort.sortRandom(posts, 6);
+
+                        templateLoader.loadTemplate('footer', '#g-app-footer',
+                            {
+                                recentPosts: recentPosts,
+                                randomPosts: randomPosts,
+                            });
+                        templateLoader.loadTemplate('login', '#g-app-container')
+                            .then(() => {
+                                validator.validateLogin();
+                            });
+                    }).catch((err) => {
+                        console.log(err);
                     });
             } else {
                 sammy.redirect('#/');
@@ -108,10 +136,25 @@ class UserController {
     }
 
     loadProfile(sammy) {
-        templateLoader.loadTemplate('footer', '#g-app-footer');
-        const user = userModel.getCurrentUser();
-        templateLoader.loadTemplate('profile', '#g-app-container',
-            { user: user });
+        postModel.getAllPosts()
+            .then((posts) => {
+                const user = userModel.getCurrentUser();
+                const sortedPosts = postSort.sortByDate(posts);
+                const recentPosts = sortedPosts.slice(0, 6);
+                const randomPosts = postSort.sortRandom(posts, 6);
+
+                templateLoader.loadTemplate('footer', '#g-app-footer',
+                    {
+                        recentPosts: recentPosts,
+                        randomPosts: randomPosts,
+                    });
+                templateLoader.loadTemplate('profile', '#g-app-container',
+                    {
+                        user: user,
+                    });
+            }).catch((err) => {
+                console.log(err);
+            });
         /*
         templateLoader.loadTemplate('footer', '#g-app-footer');
         async function getCurrentUser() {
