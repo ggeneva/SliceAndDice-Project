@@ -218,10 +218,12 @@ class PostController {
 
                 const sortedAllPosts = postSort.sortByDate(allPosts);
                 const recentPosts = sortedAllPosts.slice(0, 6);
+                const randomPosts = postSort.sortRandom(allPosts, 6);
 
                 templateLoader.loadTemplate('footer', '#g-app-footer',
                     {
                         recentPosts: recentPosts,
+                        randomPosts: randomPosts,
                     });
                 templateLoader.loadTemplate('home', '#g-app-container',
                     {
