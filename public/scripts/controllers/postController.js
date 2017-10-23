@@ -55,7 +55,7 @@ class PostController {
     loadPost(sammy) {
         let isLogged;
         let authorPosts;
-
+        let relatedPosts;
         Promise
             .all([
                 postModel.isUserLoggedIn(),
@@ -79,26 +79,47 @@ class PostController {
                 const sortedAllPosts = postSort.sortByDate(allPosts);
                 const recentPosts = sortedAllPosts.slice(0, 6);
 
-                postModel.getPosts({ prop: 'author', value: post.author })
-                .then((posts) => {
-                    authorPosts = postSort.sortByDate(posts);
-                    authorPosts = authorPosts.slice(0, 6);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+                Promise
+                    .all([
+                        postModel.getPosts(
+                            {
+                                prop: 'author',
+                                value: post.author,
+                            }),
+                        postModel.getPosts(
+                            {
+                                prop: 'category',
+                                value: post.category,
+                            }
+                        ),
+                    ])
+                    .then(([posts, relatePosts]) => {
+                        authorPosts = postSort.sortByDate(posts);
+                        authorPosts = authorPosts.slice(0, 4);
 
-                templateLoader.loadTemplate('footer', '#g-app-footer',
-                    {
-                        recentPosts: recentPosts,
-                    });
-                templateLoader.loadTemplate('post', '#g-app-container',
-                    {
-                        post: post,
-                        counter: counter,
-                        isLogged: isLogged,
-                        recentPosts: recentPosts,
-                        authorPosts: authorPosts,
+                        relatedPosts = postSort.sortByDate(relatePosts);
+                        relatedPosts = relatedPosts.slice(0, 4);
+
+                        templateLoader.loadTemplate('footer', '#g-app-footer',
+                            {
+                                recentPosts: recentPosts,
+                            }
+                        );
+
+                        console.log(relatedPosts);
+                        templateLoader.loadTemplate('post', '#g-app-container',
+                            {
+                                post: post,
+                                counter: counter,
+                                isLogged: isLogged,
+                                recentPosts: recentPosts,
+                                authorPosts: authorPosts,
+                                relatedPosts: relatedPosts,
+                            }
+                        );
+                    })
+                    .catch((err) => {
+                        console.log(err);
                     });
             })
             .catch((err) => {

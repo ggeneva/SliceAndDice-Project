@@ -1570,9 +1570,12 @@ footer {
     .p-post-comment-content-container-small p:nth-child(1),
     .p-custom-wd ul li{
         width: 25vw;
-        margin: auto;
         display: block;
 
+    }
+
+    .p-custom-wd ul li {
+        margin: auto;
     }
 
     .c-page .p-custom-wd ul li {
@@ -1607,7 +1610,7 @@ footer {
     }
 
     .c-page .p-custom-wd ul li {
-        width: 18.4vw;
+        width: 50vw;
     }
 
     .g-footer-content ul li{
