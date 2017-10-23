@@ -24,9 +24,9 @@
                     <section class="p-post-related-posts">
                         <h3>RELATED POSTS</h3>
                         <ul class="g-reset">
-                            <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
-                            <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                            <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                            {{#if relatedPostsAside}} {{#each relatedPostsAside}}
+                            <li><a href="#/posts/{{authorUid}}{{dateOfCreation}}"><img src="../images/li-icon.png">{{{title}}}</a></li>
+                            {{/each}} {{/if}}
                         </ul>
                     </section>
                     <section class="p-post-share">

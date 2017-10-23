@@ -69,6 +69,7 @@ class PostController {
         let isLogged;
         let authorPosts;
         let relatedPosts;
+        let relatedPostsAside;
 
         Promise
             .all([
@@ -117,6 +118,7 @@ class PostController {
 
                         relatedPosts = postSort.sortByDate(relatePosts);
                         relatedPosts = relatedPosts.slice(0, 4);
+                        relatedPostsAside = relatedPosts.slice(0, 3);
 
                         templateLoader.loadTemplate('footer', '#g-app-footer',
                             {
@@ -134,6 +136,7 @@ class PostController {
                                 authorPosts: authorPosts,
                                 relatedPosts: relatedPosts,
                                 randomPosts: randomPosts,
+                                relatedPostsAside: relatedPostsAside,
                             }
                         );
                     })
