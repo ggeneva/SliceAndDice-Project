@@ -156,54 +156,23 @@
             <div class="p-page-block-content">
                 <div id="tabs" class="p-tabs p-border">
                     <ul>
-                        <li><a href="#tabs-1">RECENT</a></li>
-                        <li><a href="#tabs-2">POPULAR</a></li>
+                        <li><a href="#tabs-1">AUTHOR</a></li>
+                        <li><a href="#tabs-2">RELATED</a></li>
                         <li><a href="#tabs-3">RANDOM</a></li>
                     </ul>
                     <div id="tabs-1">
                         <div class="p-post-comment-small">
+                            {{#if authorPosts}} {{#each authorPosts}}
                             <div class="p-post-comment-info-small">
                                 <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
+                                    <img class="p-post-comment-image-small" src="{{image}}">
                                 </div>
                             </div>
                             <div class="p-post-comment-content-container-small">
-                                <p>Fusce espirito degfe hje usce espirito degfe hjusce espirito degfe hjusce esp</p>
-                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
+                                <p>{{{title}}}</p>
+                                <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
                             </div>
-                        </div>
-                        <div class="p-post-comment-small">
-                            <div class="p-post-comment-info-small">
-                                <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
-                                </div>
-                            </div>
-                            <div class="p-post-comment-content-container-small">
-                                <p>Fusce espirito degfe hje</p>
-                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
-                            </div>
-                        </div>
-                        <div class="p-post-comment-small">
-                            <div class="p-post-comment-info-small">
-                                <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
-                                </div>
-                            </div>
-                            <div class="p-post-comment-content-container-small">
-                                <p>Fusce espirito degfe hje</p>
-                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
-                            </div>
-                        </div>
-                        <div class="p-post-comment-small">
-                            <div class="p-post-comment-info-small">
-                                <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="../images/user-photo.jpg">
-                                </div>
-                            </div>
-                            <div class="p-post-comment-content-container-small">
-                                <p>Fusce espirito degfe hje</p>
-                                <p class="p-post-comment-content-small">Posted By Admin on Mar 13</p>
-                            </div>
+                            {{/each}} {{/if}}
                         </div>
                     </div>
                     <div id="tabs-2">
@@ -261,23 +230,24 @@
                     </div>
                 </div>
                 <div class="p-custom-wd p-border">
-                    <h3>RELATED POSTS</h3>
+                    <h3>RECENT POSTS</h3>
+                    {{#if recentPosts}}
                     <ul>
-                        <li><a><img src="../images/li-icon.png">Say hi to thusce espirito  degfe hjusceito fe hje world</a></li>
-                        <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                        <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
-                        <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
-                        <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                        <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                        {{#each recentPosts}}
+                        <li><a href="#/posts/{{authorUid}}{{dateOfCreation}}"><img src="../images/li-icon.png">&nbsp{{{title}}}</a></li>
+                        {{/each}}
                     </ul>
+                    {{/if}} {{#unless recentPosts}}
+                    <h4>Oups... There is no recent posts!</h3>
+                        {{/unless}}
                 </div>
                 <div class="p-custom-wd p-border">
                     <h3>FROM THE STYLE TEAM</h3>
                     <p class="p-custom-wd-text">
-                        Hello, there! We are happy to see you here, again! Enjoy the news, post what you want and share it to the World :)
-                        This is a welcome to your blog-news world, whether the goal is to nurture leads, build an audience, engage existing customers, or
-                        promote sales.
-                        This is a web SPA blog applicaton with all sorts of posts. The project is sliced and diced from a given psd file provided by Telerik Academy.
+                        Hello, there! We are happy to see you here, again! Enjoy the news, post what you want and share it to the World :) This is
+                        a welcome to your blog-news world, whether the goal is to nurture leads, build an audience, engage
+                        existing customers, or promote sales. This is a web SPA blog applicaton with all sorts of posts.
+                        The project is sliced and diced from a given psd file provided by Telerik Academy.
                     </p>
                 </div>
             </div>
@@ -289,5 +259,4 @@
     $(function () {
         $("#tabs").tabs();
     });
-
 </script>

@@ -30,15 +30,16 @@
         </div>
         <div class="c-recent g-clearfix">
             <div class="p-custom-wd p-border">
-                <h3>RELATED POSTS</h3>
+                <h3>RECENT POSTS</h3>
+                {{#if recentPosts}}
                 <ul>
-                    <li><a><img src="../images/li-icon.png">&nbspSay hi to the world</a></li>
-                    <li><a><img src="../images/li-icon.png">&nbspNew car on the street!!!</a></li>
-                    <li><a><img src="../images/li-icon.png">&nbspBrowse channels only here</a></li>
-                    <li><a><img src="../images/li-icon.png">&nbspSay hi to the world</a></li>
-                    <li><a><img src="../images/li-icon.png">&nbspNew car on the street!!!</a></li>
-                    <li><a><img src="../images/li-icon.png">&nbspBrowse channels only here</a></li>
+                    {{#each recentPosts}}
+                    <li><a href="#/posts/{{authorUid}}{{dateOfCreation}}"><img src="../images/li-icon.png">&nbsp{{{title}}}</a></li>
+                    {{/each}}
                 </ul>
+                {{/if}} {{#unless recentPosts}}
+                <h4>Oups... There is no recent posts!</h3>
+                    {{/unless}}
             </div>
             <div class="p-custom-wd p-border">
                 <h3>RELATED POSTS</h3>

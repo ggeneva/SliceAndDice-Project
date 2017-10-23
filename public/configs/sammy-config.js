@@ -39,6 +39,7 @@ class Router {
 
             // Posts by category 
             this.get('#/posts/?', postController.loadCategory);
+            this.get('#/posts/search/?', postController.searchTag)
 
 
             navUser.toggleNavigationUserElement();

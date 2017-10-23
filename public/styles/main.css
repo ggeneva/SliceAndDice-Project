@@ -206,6 +206,15 @@ ul li a:hover, ul li a:active, ul li a:focus{
     padding: 14px 14px 10px;
 }
 
+.g-warning {
+    display: block;
+    font-size: 8vw;
+    margin: auto;
+    margin-top: 15vw;
+    margin-bottom: 30vw;
+    margin-left: 5vw;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -325,6 +334,14 @@ footer {
     margin-right: 15%;
     margin-bottom: 2.5%;
 }
+
+.g-footer-content ul li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 278px;
+}
+
 /* Home page */
 
 
@@ -930,6 +947,10 @@ footer {
 
 }
 
+.c-page .p-custom-wd ul li {
+    width: 10vw;
+}
+
 .p-profile {
     display: block;
     margin: auto;
@@ -1045,6 +1066,10 @@ footer {
         font-size: 0.9vw;
     }
 
+    .g-footer-content ul li{
+        width: 20vw;
+    }
+    
     .g-logo-box {
         margin-left: 3.99vw;
         margin-top: 7.38vw;
@@ -1129,8 +1154,22 @@ footer {
         height: 4.9vw;
     }
 
+
     .c-posts {
         width: 77.50vw;
+    }
+
+    .c-recent {
+        width: 13.92vw;
+    }
+
+    .c-selected-category {
+        font-size: 0.77vw;
+        margin-left: 1.48vw;
+    }
+
+    .c-page .p-custom-wd ul li {
+        width: 11vw;
     }
 
     .p-custom-wd {
@@ -1149,15 +1188,6 @@ footer {
 
     .p-custom-wd-text {
         font-size: 0.77vw;
-    }
-
-    .c-recent {
-        width: 13.92vw;
-    }
-
-    .c-selected-category {
-        font-size: 0.77vw;
-        margin-left: 1.48vw;
     }
 
     .p-tabs ul li,
@@ -1355,6 +1385,10 @@ footer {
         width: 77.50vw;
     }
 
+    .c-page .p-custom-wd ul li {
+        width: 12vw;
+    }
+
     .h-container {
         display: block;
         width: 95%;
@@ -1471,6 +1505,9 @@ footer {
         position: relative;
     }
 
+    .g-footer-content ul li{
+        width: 20vw;
+    }
 
     #g-myNavbar ul li {
         font-size: 1.8vw;
@@ -1499,6 +1536,10 @@ footer {
 
     .p-post-comment-content-container-small p:nth-child(1) {
         width: 14vw;
+    }
+
+    .c-page .p-custom-wd ul li {
+        width: 15vw;
     }
 }
 
@@ -1533,6 +1574,14 @@ footer {
         display: block;
 
     }
+
+    .c-page .p-custom-wd ul li {
+        width: 17vw;
+    }
+
+    .g-footer-content ul li{
+        width: 23vw;
+    }
 }
 
 /* Custom Resizing for responsive design ---->*/
@@ -1555,6 +1604,14 @@ footer {
 
     .h-container article:hover {
         width: 231px;
+    }
+
+    .c-page .p-custom-wd ul li {
+        width: 18.4vw;
+    }
+
+    .g-footer-content ul li{
+        width: 27vw;
     }
 }
 
@@ -1589,6 +1646,10 @@ footer {
         margin: auto;
     }
 
+    .g-footer-content ul li{
+        width: 60vw;
+    }
+
     #g-myNavbar ul li {
         font-size: 24px;
         margin-right: 20px;
@@ -1616,6 +1677,10 @@ footer {
         width: 80%;
         margin: auto;
         margin-bottom: 30px;
+    }
+
+    .p-custom-wd ul li {
+        width: 50vw;
     }
 
     .p-custom-wd {

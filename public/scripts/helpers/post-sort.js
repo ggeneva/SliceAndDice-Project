@@ -6,8 +6,6 @@ class PostSort {
         for (const comments in postsArray) {
             if (postsArray.hasOwnProperty(comments)) {
                 const element = postsArray[comments].dateOfCreation;
-                console.log(postsArray[comments]);
-                console.log(element);
             }
         }
         const sortedPosts = postsArray.sort(function(a, b) {

@@ -53,37 +53,55 @@ class PostController {
     }
 
     loadPost(sammy) {
-        // TO DO - refactor it
-
         let isLogged;
+        let authorPosts;
 
-        postModel.isUserLoggedIn().then((isLoggedIn) => {
-            if (isLoggedIn) {
-                isLogged = false;
-            } else {
-                isLogged = true;
-            }
-            console.log(isLogged);
-            return isLogged;
-        });
-        postModel.getPost(sammy.params.id)
-            .then((post) => {
+        Promise
+            .all([
+                postModel.isUserLoggedIn(),
+                postModel.getPost(sammy.params.id),
+                postModel.getAllPosts(),
+            ])
+            .then(([isLoggedIn, post, allPosts]) => {
+                if (isLoggedIn) {
+                    isLogged = false;
+                } else {
+                    isLogged = true;
+                }
+
                 let counter = 0;
                 if (post.hasOwnProperty('comments')) {
-                    console.log('Tooovaaa tuk:');
-                    console.log(post.comments);
                     counter = Object.keys(post.comments).length;
                 } else {
                     counter = 0;
                 }
-                templateLoader.loadTemplate('footer', '#g-app-footer');
+
+                const sortedAllPosts = postSort.sortByDate(allPosts);
+                const recentPosts = sortedAllPosts.slice(0, 6);
+
+                postModel.getPosts({ prop: 'author', value: post.author })
+                .then((posts) => {
+                    authorPosts = postSort.sortByDate(posts);
+                    authorPosts = authorPosts.slice(0, 6);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+
+                templateLoader.loadTemplate('footer', '#g-app-footer',
+                    {
+                        recentPosts: recentPosts,
+                    });
                 templateLoader.loadTemplate('post', '#g-app-container',
                     {
                         post: post,
                         counter: counter,
                         isLogged: isLogged,
+                        recentPosts: recentPosts,
+                        authorPosts: authorPosts,
                     });
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 console.log(err);
             });
     }
@@ -91,25 +109,85 @@ class PostController {
     loadCategory(sammy) {
         const pageSize = sammy.params.pageSize;
         const page = sammy.params.page;
-        console.log(pageSize);
-        console.log(page);
 
-        postModel.getPosts({
-            prop: 'category',
-            value: sammy.params.category,
-        })
-            .then((posts) => {
+        Promise
+            .all([
+                postModel.getAllPosts(),
+                postModel.getPosts({
+                    prop: 'category',
+                    value: sammy.params.category,
+                }),
+            ])
+            .then(([allPosts, posts]) => {
                 const countPages = Math.ceil(Object.keys(posts).length / pageSize);
                 const pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
                 const sortedPosts = postSort.sortByDate(posts);
+                const sortedAllPosts = postSort.sortByDate(allPosts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
+                const recentPosts = sortedAllPosts.slice(0, 6);
 
-                templateLoader.loadTemplate('footer', '#g-app-footer');
+                templateLoader.loadTemplate('footer', '#g-app-footer',
+                        {
+                            recentPosts: recentPosts,
+                        });
                 templateLoader.loadTemplate('category', '#g-app-container',
                     {
-                        posts: filteredPosts, countPages,
-                        pageNumbers, pageSize, pagination: true,
+                        posts: filteredPosts,
+                        countPages: countPages,
+                        pageNumbers: pageNumbers,
+                        pageSize: pageSize,
+                        pagination: true,
                         category: sammy.params.category,
+                        recentPosts: recentPosts,
+                    });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    searchTag(sammy) {
+        const pageSize = sammy.params.pageSize;
+        const page = sammy.params.page;
+        const author = $('#searchForm').val();
+        $('#search-form')[0].reset();
+
+        Promise
+            .all([
+                postModel.getAllPosts(),
+                postModel.getPosts({
+                    prop: 'author',
+                    value: author,
+                }),
+            ])
+            .then(([allPosts, posts]) => {
+                let countPages = 0;
+                let pageNumbers = 0;
+                let sortedPosts = [];
+                let filteredPosts;
+
+                if (posts) {
+                    countPages = Math.ceil(Object.keys(posts).length / pageSize);
+                    pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
+                    sortedPosts = postSort.sortByDate(posts);
+                    filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
+                }
+
+                const sortedAllPosts = postSort.sortByDate(allPosts);
+                const recentPosts = sortedAllPosts.slice(0, 6);
+
+                templateLoader.loadTemplate('footer', '#g-app-footer',
+                        {
+                            recentPosts: recentPosts,
+                        });
+                templateLoader.loadTemplate('home', '#g-app-container',
+                    {
+                        posts: filteredPosts,
+                        countPages: countPages,
+                        pageNumbers: pageNumbers,
+                        pageSize: pageSize,
+                        pagination: true,
+                        recentPosts: recentPosts,
                     });
             })
             .catch((err) => {

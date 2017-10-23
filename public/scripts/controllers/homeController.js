@@ -10,8 +10,6 @@ class HomeController {
     loadHomePage(sammy) {
         const pageSize = sammy.params.pageSize;
         const page = sammy.params.page;
-        console.log(pageSize);
-        console.log(page);
 
         postModel.getAllPosts()
             .then((posts) => {
@@ -19,11 +17,20 @@ class HomeController {
                 const pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
                 const sortedPosts = postSort.sortByDate(posts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
+                const recentPosts = sortedPosts.slice(0, 6);
 
-                templateLoader.loadTemplate('footer', '#g-app-footer');
+                templateLoader.loadTemplate('footer', '#g-app-footer',
+                    {
+                        recentPosts: recentPosts,
+                    });
                 templateLoader.loadTemplate('home', '#g-app-container',
-                    { posts: filteredPosts, countPages,
-                        pageNumbers, pageSize, pagination: true });
+                    {
+                        posts: filteredPosts,
+                        countPages: countPages,
+                        pageNumbers: pageNumbers,
+                        pageSize: pageSize,
+                        pagination: true,
+                    });
             }).catch((err) => {
                 console.log(err);
             });
