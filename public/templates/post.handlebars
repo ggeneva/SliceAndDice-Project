@@ -96,43 +96,16 @@
                                                 {{{this.content}}}
                                             </div>
                                         </div>
-                                        <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
-                                            title="You need registration or login for comment:" disabled {{/if}}></input>
-                                        <form action="#/posts/{{../post.authorUid}}{{../post.dateOfCreation}}/create-sub-comment/{{this.authorUid}}{{this.dateOfCreation}}"
-                                            id="#p-subcomments-form" method="post" class="hidden">
+                                        <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form"
+                                            title="You need registration or login for comment:" disabled ></input>
+                                        <form method="post" class="hidden">
                                             <textarea class="p-ccf-content" name="content" id="content-sub" required></textarea>
-                                            <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if ../isLogged}} title="You need registration or login for comment:"
-                                                disabled {{/if}}>
+                                            <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" title="You need registration or login for comment:"
+                                                disabled >
                                         </form>
                                     </div>
                                 </div>
-                                {{#if this.comments}} {{#each this.comments}}
-                                <div class="p-post-comment p-post-comment-sub">
-                                    <div class="p-post-comment-info">
-                                        <div class="p-post-comment-info-container">
-                                            <img class="p-post-comment-image" src="{{this.imageUrl}}">
-                                            <div class="p-post-comment-date">
-                                                <span>{{this.monthOfCreation}}</span>
-                                                <span>{{this.dayOfCreation}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="p-post-comment-content-container">
-                                        <h3>{{this.authorName}}</h3>
-                                        <div class="p-post-comment-content">
-                                            {{{this.content}}}
-                                        </div>
-                                        <input id="p-get-subcomments-form" type="button" value="REPLAY" class="p-replay-btn p-get-subcomments-form" {{#if ../isLogged}}
-                                            title="You need registration or login for comment:" disabled {{/if}}></input>
-                                        <form action="#/posts/{{../post.authorUid}}{{../post.dateOfCreation}}/create-sub-comment/{{../post.comments.authorUid}}{{../post.comments.dateOfCreation}}/create-sub2-comment/{{this.authorUid}}{{this.dateOfCreation}}"
-                                            id="#p-subcomments-form" method="post" class="hidden">
-                                            <textarea class="p-ccf-content" name="content" id="content-sub" required></textarea>
-                                            <input id="p-toggle-sub-comment" type="submit" value="SUBMIT" class="p-replay-btn p-ccf-btn" {{#if ../isLogged}} title="You need registration or login for comment:"
-                                                disabled {{/if}}>
-                                        </form>
-                                    </div>
-                                </div>
-                                {{/each}}{{/if}} {{/each}}{{/if}}
+                                {{/each}}{{/if}}
                             </div>
                         </div>
                         <div class="p-post-line"></div>
@@ -195,11 +168,21 @@
                         {{/each}} {{/if}}
                     </div>
                     <div id="tabs-3">
-                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula
-                            accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent
-                            taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
-                            Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
-                            Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                        {{#if randomPosts}} {{#each randomPosts}}
+                        <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                            <div class="p-post-comment-small">
+                                <div class="p-post-comment-info-small">
+                                    <div class="p-post-comment-info-container-small">
+                                        <img class="p-post-comment-image-small" src="{{image}}">
+                                    </div>
+                                </div>
+                                <div class="p-post-comment-content-container-small">
+                                    <p>{{{title}}}</p>
+                                    <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
+                                </div>
+                            </div>
+                        </a>
+                        {{/each}} {{/if}}
                     </div>
                 </div>
                 <div class="p-custom-wd p-border">

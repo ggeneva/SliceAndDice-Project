@@ -176,34 +176,6 @@ class UserController {
             }
         });
     }
-
-    createSubReplayComment(sammy) {
-        userModel.isUserLoggedIn().then((isLoggedIn) => {
-            if (isLoggedIn) {
-                const user = userModel.getCurrentUser();
-
-                const formData = {
-                    postId: sammy.params.id,
-                    imageUrl: user.photoURL,
-                    authorName: user.displayName,
-                    content: sammy.params.content,
-                    authorUid: user.uid,
-                    dateOfCreation: Date.now(),
-                    monthOfCreation: getMonthName(),
-                    dayOfCreation: getDayOfCreation(),
-                    idComment: sammy.params.idComment,
-                    idCommentReply: sammy.params.idCommentReplay,
-                };
-
-                console.log(formData);
-
-                commentModel.createSubReplayCom(formData);
-                sammy.redirect('#/posts/' + sammy.params.id);
-            } else {
-                sammy.redirect('#/login');
-            }
-        });
-    }
 }
 
 const userController = new UserController(userModel, uploadImg,

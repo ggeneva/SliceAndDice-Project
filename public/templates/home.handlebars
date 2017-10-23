@@ -27,7 +27,8 @@
         {{/each}}
 
     </div>
-    <br> {{#if pagination}}
+    <br> 
+    {{#if pagination}}
     <div class="h-pagination-container">
         <div class="h-pagination-left" id="previous">
             <a href="#/home/?page=1&pageSize={{pageSize}}"><img src="../images/pagination-left.png"></a>
@@ -43,8 +44,27 @@
         </div>
     </div>
     {{/if}}
+    <!--
+    {{#if templateForSearch}}
+    <div class="h-pagination-container">
+        <div class="h-pagination-left" id="previous">
+            <a href="#/posts/search/?page=1&pageSize={{pageSize}}&author={{author}}&"><img src="../images/pagination-left.png"></a>
+        </div>
+        <div class="g-flex"></div>
+        <div class="h-pagination-numbers">
+            {{#each pageNumbers}}
+            <a href="#/posts/search/?page={{this}}&pageSize={{../pageSize}}&author={{../author}}&">{{this}}</a> {{/each}}
+        </div>
+        <div class="g-flex"></div>
+        <div class="h-pagination-right" id="next">
+            <a href="#/posts/search/?page={{pageNumbers.length}}&pageSize={{pageSize}}&author={{author}}&"><img src="../images/pagination-right.png"></a>
+        </div>
+    </div>
     {{/if}}
+    -->
+    
+    {{/if}} 
     {{#unless posts}}
-        <h1 class="g-warning">There is no posts from this author!</h1>
+    <h1 class="g-warning">There is no posts from this author!</h1>
     {{/unless}}
 </div>

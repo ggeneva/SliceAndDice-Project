@@ -464,6 +464,7 @@ footer {
    margin-top: 0px;
    border: 1px transparent;
 }
+
 /* Post single page */
 
 .p-page {
@@ -471,9 +472,11 @@ footer {
     color: #7a7575;
     width: 100%;
 }
+
 .p-page-content {
     display: flex;
 }
+
 .p-page-block {
     display: block;
     

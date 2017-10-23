@@ -56,6 +56,7 @@ class PostController {
         let isLogged;
         let authorPosts;
         let relatedPosts;
+
         Promise
             .all([
                 postModel.isUserLoggedIn(),
@@ -78,6 +79,10 @@ class PostController {
 
                 const sortedAllPosts = postSort.sortByDate(allPosts);
                 const recentPosts = sortedAllPosts.slice(0, 6);
+
+                const randomPosts = postSort.sortRandom(allPosts, 4);
+                const randomPostsFooter = postSort.sortRandom(allPosts, 6);
+
 
                 Promise
                     .all([
@@ -103,10 +108,10 @@ class PostController {
                         templateLoader.loadTemplate('footer', '#g-app-footer',
                             {
                                 recentPosts: recentPosts,
+                                randomPosts: randomPostsFooter,
                             }
                         );
 
-                        console.log(relatedPosts);
                         templateLoader.loadTemplate('post', '#g-app-container',
                             {
                                 post: post,
@@ -115,6 +120,7 @@ class PostController {
                                 recentPosts: recentPosts,
                                 authorPosts: authorPosts,
                                 relatedPosts: relatedPosts,
+                                randomPosts: randomPosts,
                             }
                         );
                     })
@@ -146,10 +152,12 @@ class PostController {
                 const sortedAllPosts = postSort.sortByDate(allPosts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
                 const recentPosts = sortedAllPosts.slice(0, 6);
+                const randomPosts = postSort.sortRandom(allPosts, 6);
 
                 templateLoader.loadTemplate('footer', '#g-app-footer',
                         {
                             recentPosts: recentPosts,
+                            randomPosts: randomPosts,
                         });
                 templateLoader.loadTemplate('category', '#g-app-container',
                     {
@@ -160,6 +168,7 @@ class PostController {
                         pagination: true,
                         category: sammy.params.category,
                         recentPosts: recentPosts,
+                        randomPosts: randomPosts,
                     });
             })
             .catch((err) => {
@@ -182,33 +191,35 @@ class PostController {
                 }),
             ])
             .then(([allPosts, posts]) => {
-                let countPages = 0;
-                let pageNumbers = 0;
+                const countPages = 0;
+                const pageNumbers = 0;
                 let sortedPosts = [];
-                let filteredPosts;
+                // let filteredPosts;
 
                 if (posts) {
-                    countPages = Math.ceil(Object.keys(posts).length / pageSize);
-                    pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
+                    // countPages = Math.ceil(Object.keys(posts).length / pageSize);
+                    // pageNumbers = Array.from({ length: countPages }, (v, i) => i + 1);
                     sortedPosts = postSort.sortByDate(posts);
-                    filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
+                    // filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
                 }
 
                 const sortedAllPosts = postSort.sortByDate(allPosts);
                 const recentPosts = sortedAllPosts.slice(0, 6);
 
                 templateLoader.loadTemplate('footer', '#g-app-footer',
-                        {
-                            recentPosts: recentPosts,
-                        });
+                    {
+                        recentPosts: recentPosts,
+                    });
                 templateLoader.loadTemplate('home', '#g-app-container',
                     {
-                        posts: filteredPosts,
+                        posts: sortedPosts,
                         countPages: countPages,
                         pageNumbers: pageNumbers,
                         pageSize: pageSize,
-                        pagination: true,
+                        pagination: false,
+                        templateForSearch: true,
                         recentPosts: recentPosts,
+                        author: author,
                     });
             })
             .catch((err) => {

@@ -2,7 +2,6 @@ class PostSort {
     sortByDate(posts) {
         const postsArray = Object.keys(posts).map((key) => posts[key]);
 
-
         for (const comments in postsArray) {
             if (postsArray.hasOwnProperty(comments)) {
                 const element = postsArray[comments].dateOfCreation;
@@ -36,6 +35,19 @@ class PostSort {
         }
 
         return filteredPosts;
+    }
+
+    sortRandom(posts, cnt) {
+        const counter = cnt;
+        const postsArray = Object.keys(posts).map((key) => posts[key]);
+        const randomArray = [];
+
+        for (let index = 0; index < counter; index++) {
+            const randomItem = postsArray[Math.floor(Math.random()*postsArray.length)];
+            randomArray.push(randomItem);
+        }
+
+        return randomArray;
     }
 }
 

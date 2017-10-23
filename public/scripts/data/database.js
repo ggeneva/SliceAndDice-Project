@@ -61,17 +61,6 @@ class DataBase {
         });
     }
 
-    createSubReplayComment(data) {
-        const path = 'posts/' + data.postId + '/comments/'
-        + data.idComment + '/comments/' + data.idCommentReply
-         + '/comments/' + data.authorUid + data.dateOfCreation;
-        this.database.ref(path)
-        .set(data)
-        .catch((err) => {
-            console.log(err.message);
-        });
-    }
-
     getAllPosts() {
         return new Promise((resolve, reject) => {
             const posts = this.database.ref('posts/');

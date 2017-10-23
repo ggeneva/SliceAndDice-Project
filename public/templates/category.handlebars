@@ -38,19 +38,20 @@
                     {{/each}}
                 </ul>
                 {{/if}} {{#unless recentPosts}}
-                <h4>Oups... There is no recent posts!</h3>
-                    {{/unless}}
+                <h4>Oups... There is no recent posts!</h4>
+                {{/unless}}
             </div>
             <div class="p-custom-wd p-border">
-                <h3>RELATED POSTS</h3>
+                <h3>RANDOM POSTS</h3>
+                {{#if randomPosts}}
                 <ul>
-                    <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
-                    <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                    <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
-                    <li><a><img src="../images/li-icon.png">Say hi to the world</a></li>
-                    <li><a><img src="../images/li-icon.png">New car on the street!!!</a></li>
-                    <li><a><img src="../images/li-icon.png">Browse channels only here</a></li>
+                    {{#each randomPosts}}
+                    <li><a href="#/posts/{{authorUid}}{{dateOfCreation}}"><img src="../images/li-icon.png">&nbsp{{{title}}}</a></li>
+                    {{/each}}
                 </ul>
+                {{/if}} {{#unless randomPosts}}
+                <h4>Oups... There is no recent posts!</h4>
+                {{/unless}}
             </div>
         </div>
     </div>

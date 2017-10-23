@@ -18,10 +18,12 @@ class HomeController {
                 const sortedPosts = postSort.sortByDate(posts);
                 const filteredPosts = postSort.sortByPageAndPageSize(page, pageSize, sortedPosts);
                 const recentPosts = sortedPosts.slice(0, 6);
+                const randomPosts = postSort.sortRandom(posts, 6);
 
                 templateLoader.loadTemplate('footer', '#g-app-footer',
                     {
                         recentPosts: recentPosts,
+                        randomPosts: randomPosts,
                     });
                 templateLoader.loadTemplate('home', '#g-app-container',
                     {
@@ -30,6 +32,7 @@ class HomeController {
                         pageNumbers: pageNumbers,
                         pageSize: pageSize,
                         pagination: true,
+                        templateForSearch: false,
                     });
             }).catch((err) => {
                 console.log(err);
