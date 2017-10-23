@@ -162,32 +162,36 @@
                     </ul>
                     <div id="tabs-1">
                         {{#if authorPosts}} {{#each authorPosts}}
-                        <div class="p-post-comment-small">
-                            <div class="p-post-comment-info-small">
-                                <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="{{image}}">
+                        <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                            <div class="p-post-comment-small">
+                                <div class="p-post-comment-info-small">
+                                    <div class="p-post-comment-info-container-small">
+                                        <img class="p-post-comment-image-small" src="{{image}}">
+                                    </div>
+                                </div>
+                                <div class="p-post-comment-content-container-small">
+                                    <p>{{{title}}}</p>
+                                    <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
                                 </div>
                             </div>
-                            <div class="p-post-comment-content-container-small">
-                                <p>{{{title}}}</p>
-                                <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
-                            </div>
-                        </div>
+                        </a>
                         {{/each}} {{/if}}
                     </div>
                     <div id="tabs-2">
                         {{#if relatedPosts}} {{#each relatedPosts}}
-                        <div class="p-post-comment-small">
-                            <div class="p-post-comment-info-small">
-                                <div class="p-post-comment-info-container-small">
-                                    <img class="p-post-comment-image-small" src="{{image}}">
+                        <a href="#/posts/{{authorUid}}{{dateOfCreation}}">
+                            <div class="p-post-comment-small">
+                                <div class="p-post-comment-info-small">
+                                    <div class="p-post-comment-info-container-small">
+                                        <img class="p-post-comment-image-small" src="{{image}}">
+                                    </div>
+                                </div>
+                                <div class="p-post-comment-content-container-small">
+                                    <p>{{{title}}}</p>
+                                    <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
                                 </div>
                             </div>
-                            <div class="p-post-comment-content-container-small">
-                                <p>{{{title}}}</p>
-                                <p class="p-post-comment-content-small">Posted By {{author}} on {{monthOfCreation}} {{dayOfCreation}}</p>
-                            </div>
-                        </div>
+                        </a>
                         {{/each}} {{/if}}
                     </div>
                     <div id="tabs-3">
@@ -228,4 +232,5 @@
     $(function () {
         $("#tabs").tabs();
     });
+
 </script>
