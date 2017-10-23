@@ -184,8 +184,6 @@ class UserController {
                     dayOfCreation: getDayOfCreation(),
                 };
 
-                console.log(formData);
-
                 commentModel.createCom(formData);
                 sammy.redirect('#/posts/' + sammy.params.id);
             } else {
@@ -209,8 +207,6 @@ class UserController {
                     dayOfCreation: getDayOfCreation(),
                     idComment: sammy.params.idComment,
                 };
-
-                console.log(formData);
 
                 commentModel.createSubCom(formData);
                 sammy.redirect('#/posts/' + sammy.params.id);

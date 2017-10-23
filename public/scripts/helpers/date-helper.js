@@ -14,7 +14,7 @@ const getMonthName = () => {
 const getDayOfCreation = () => {
     const currentDate = new Date();
     const dateCreated = currentDate.getDate();
-console.log(dateCreated);
+
     return dateCreated;
 };
 

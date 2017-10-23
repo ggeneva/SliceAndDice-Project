@@ -25,7 +25,6 @@ function menuSwitch() {
 }
 
 function getForm() {
-    console.log('please');
     event.stopPropagation();
     event.stopImmediatePropagation();
     const form = $('.p-get-subcomments-form').next();
