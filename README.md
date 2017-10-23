@@ -39,7 +39,7 @@ https://sliceanddiceproject-89fec.firebaseapp.com/#/home/?page=1&pageSize=11
 ![Mobile](/images/mobile1.png)
 <br><br>
 ### Laptop resolution
-![Home](/images/pic1.png)
+![Home](/images/Pic1.png)
 <br><br>
 ![Post](/images/pic6.png)
 <br><br>
