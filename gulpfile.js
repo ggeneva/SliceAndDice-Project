@@ -74,16 +74,3 @@ gulp.task('fonts', function() {
 gulp.task('build:dist',
 ['scripts', 'styles', 'templates', 'html', 'configs', 'fonts', 'images']);
 
-
-// Sass
-gulp.task('styles-sass', function() {
-    gulp.src('sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./tmp/app/styles/'));
-});
-
-// Watch task
-gulp.task('default', function() {
-    gulp.watch('./sass/**/*.scss', ['styles-sass']);
-    gulp.watch('./app/**/**/*.js', ['compile:js']);
-});
