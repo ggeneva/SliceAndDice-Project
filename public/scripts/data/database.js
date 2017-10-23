@@ -41,6 +41,7 @@ class DataBase {
                 console.log(err.message);
             });
     }
+
     createComment(data) {
         const path = 'posts/' + data.postId + '/comments/'
                         + data.authorUid + data.dateOfCreation;
